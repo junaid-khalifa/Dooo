@@ -1,12 +1,13 @@
-import { InputProps } from "../../types"
+import React from 'react'
+import { InputProps } from '../../../types'
 
 const Input = (props: InputProps) => {
     return (
-        <div className="relative ">
+        <div className="">
             <input
                 type={props.type}
                 id={props.id}
-                className="rounded-md border-transparent border-[1px] border-[#787C87] my-2 flex-1 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base"
+                className="rounded-md border-transparent my-2 flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 outline-[0.5px] placeholder-gray-4 text-base"
                 placeholder={props.placeholder}
                 onChange={props.onChange}
                 value={props.value}

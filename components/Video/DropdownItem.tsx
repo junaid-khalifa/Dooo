@@ -1,7 +1,7 @@
 import { MdDeleteForever } from 'react-icons/md'
-import { DropdownProps } from '../../types'
+import { DropdownItemProps } from '../../types'
 
-const DropdownItem = (props: DropdownProps) => {
+const DropdownItem = (props: DropdownItemProps) => {
     return (
         <div>
             <div className="flex items-center justify-between mt-4">

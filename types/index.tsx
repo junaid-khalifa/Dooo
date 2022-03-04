@@ -19,6 +19,29 @@ export interface InputProps {
     value: string | number;
 }
 
-export interface DropdownProps {
+export interface DropdownItemProps {
     category: string;
+}
+
+export interface TableProps {
+    id: number;
+    thumbnail: string;
+    title: string;
+    date: string;
+    views: number;
+    avgViewDuration: number | string;
+    avgPercentViewed: number | string;
+}
+
+export interface DropDownProps {
+    name: string;
+}
+
+export interface CallToActionProp {
+    modalHandler: () => void;
+}
+
+export interface ModalProps {
+    modalStyle: string;
+    handleModal: () => void;
 }
