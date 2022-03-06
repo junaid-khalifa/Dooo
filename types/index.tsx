@@ -45,3 +45,36 @@ export interface ModalProps {
     modalStyle: string;
     handleModal: () => void;
 }
+
+export interface AddonProps {
+    title: () => JSX.Element;
+    btntxt: string;
+    imgpath: string;
+    trialtxt: string;
+    btncolor: string;
+    bgcolor: string;
+}
+
+export interface SelectProps {
+    name: string;
+}
+
+export interface ResolutionProps {
+    value1: string | number;
+    value2: string | number;
+    checked: boolean;
+}
+
+export interface OptimizationProps {
+    text: string;
+}
+
+export interface SaveButtonProps {
+    placeholder: string;
+}
+
+export interface ZonesProps {
+    zone: string;
+    storage: string;
+    checked: boolean;
+}
