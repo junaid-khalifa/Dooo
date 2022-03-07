@@ -1,9 +1,15 @@
-import VideosList from "../components/Videos"
+import Sidebar from "../components/User/Home/Sidebar"
+import VideosList from "../components/User/Videos"
 
 const playlist = () => {
     return (
-        <div>
-            <VideosList />
+        <div className="flex flex-cols-2">
+            <div className="w-[10%] border-r-[1.5px] border-black">
+                <Sidebar />
+            </div>
+            <div className="w-[90%]">
+                <VideosList />
+            </div>
         </div>
     )
 }

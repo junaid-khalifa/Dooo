@@ -7,7 +7,7 @@ const Dropdown = (props: DropDownProps) => {
 
     return (
         <div>
-            <div onClick={() => setIsList(!isList)} className="w-auto mb-2 p-3 shadow rounded bg-white border-[1px] border-[#787C87] text-sm font-medium leading-none text-gray-800 flex items-center justify-between cursor-pointer" >
+            <div onClick={() => setIsList(!isList)} className="w-auto mb-2 p-3 rounded bg-[#F7FAFC] border-0 text-sm font-medium leading-none text-gray-800 flex items-center justify-between cursor-pointer" >
                 {props.name}
                 {isList ? (
                     <div>

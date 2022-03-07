@@ -1,7 +1,7 @@
 import React from 'react'
-import Navigation from '../components/Signup/Navigation'
-import Form from '../components/Signup/Form'
-import Footer from '../components/Signup/Footer'
+import Navigation from '../components/User/Signup/Navigation'
+import Form from '../components/User/Signup/Form'
+import Footer from '../components/User/Signup/Footer'
 
 const Auth = () => {
     return (

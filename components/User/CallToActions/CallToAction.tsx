@@ -3,7 +3,6 @@ import Link from "next/link"
 import { RiPagesLine } from "react-icons/ri"
 import TableData from "../Videos/TableData"
 import Modal from './Modal'
-import { CallToActionProp } from "../../types"
 
 const CallToActions = () => {
   const [hide, setHide] = useState(true)
@@ -14,7 +13,7 @@ const CallToActions = () => {
   const modalStyle = hide ? 'hidden' : 'none'
 
   return (
-    <>
+    <div>
       <div className="rounded-t mb-0 px-4 py-3 border-0">
         <div className="flex gap-2 items-center">
           <div className="cursor-pointer">
@@ -42,8 +41,8 @@ const CallToActions = () => {
       </div>
 
       <section className="relative py-12 bg-blueGray-50">
-        <div className="w-full mb-12 px-4">
-          <div className="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded">
+        <div className="w-full mb-4 px-4">
+          <div className="relative flex flex-col min-w-0 break-words w-full mb-6 rounded">
             <div className="flex justify-end rounded-t mb-0 px-4 py-3 border-0">
               <div className="gap-2 items-center">
                 <div className="py-2">
@@ -80,7 +79,7 @@ const CallToActions = () => {
 
       </section>
       <Modal handleModal={modalHandler} modalStyle={modalStyle} />
-    </>
+    </div>
   )
 }
 

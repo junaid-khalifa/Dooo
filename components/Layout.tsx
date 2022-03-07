@@ -1,5 +1,4 @@
 import { LayoutProps } from "../types"
-import Navigation from "./Signup/Navigation"
 
 const Layout = ({ children }: LayoutProps) => {
   return (

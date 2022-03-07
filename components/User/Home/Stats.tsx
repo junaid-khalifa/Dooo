@@ -1,6 +1,6 @@
 import Image from "next/image"
 import { GoGraph } from 'react-icons/go'
-import Addons from "./Addons"
+import Date from './Date'
 
 const Stats = () => {
     return (
@@ -27,22 +27,23 @@ const Stats = () => {
                     </div>
                 </div>
             </div>
-            <div className='grid grid-cols-4 gap-4 h-[120px] mx-6 my-6'>
-                <div className="container mx-auto text-center p-4 bg-[#CAEBF2]">
-                    <h1>153 viewers watching</h1>
-                    <h1>Your Videos</h1>
+            <Date />
+            <div className='flex flex-row gap-4 mx-6 my-6'>
+                <div className="flex flex-col justify-center items-center w-24 flex-grow h-[126px] bg-[#CAEBF2]">
+                    <h1 className="font-semibold">153 viewers watching</h1>
+                    <h1 className="font-[900]">Your Videos</h1>
                 </div>
-                <div className="container mx-auto text-center p-4 bg-[#CAEBF2]">
-                    <h1 className="">22000</h1>
-                    <h1 className="">Total Views</h1>
+                <div className="flex flex-col justify-center items-center w-24 flex-grow h-[126px] bg-[#CAEBF2]">
+                    <h1 className="font-semibold">22000</h1>
+                    <h1 className="font-[900]">Total Views</h1>
                 </div>
-                <div className="container mx-auto text-center p-4 bg-[#CAEBF2]">
-                    <h1>22</h1>
-                    <h1>Total Videos</h1>
+                <div className="flex flex-col justify-center items-center w-24 flex-grow h-[126px] bg-[#CAEBF2]">
+                    <h1 className="font-semibold">22</h1>
+                    <h1 className="font-[900]">Total Videos</h1>
                 </div>
-                <div className="container mx-auto text-center p-4 bg-[#CAEBF2]">
-                    <h1>671.5hrs</h1>
-                    <h1>Watch Time</h1>
+                <div className="flex flex-col justify-center items-center w-24 flex-grow h-[126px] bg-[#CAEBF2]">
+                    <h1 className="font-semibold">671.5hrs</h1>
+                    <h1 className="font-[900]">Watch Time</h1>
                 </div>
             </div>
 
