@@ -5,10 +5,10 @@ import Navigation from "../components/User/Home/Navigation"
 const upload = () => {
     return (
         <div className="flex flex-cols-2">
-            <div className="w-[5%] border-r-[1.5px] border-black">
+            <div className="w-[4%] border-r-[1.5px] border-black">
                 <Sidebar />
             </div>
-            <div className="w-[95%]">
+            <div className="w-[96%]">
                 <Navigation />
                 <Upload />
             </div>

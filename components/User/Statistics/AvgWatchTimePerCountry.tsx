@@ -17,8 +17,6 @@ const options = {
     defaultColor: '#392DCA',
 }
 
-console.log(Chart)
-
 const AvgWatchTimePerCountry = () => {
     return (
         <div>

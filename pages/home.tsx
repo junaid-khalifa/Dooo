@@ -6,10 +6,10 @@ import Stats from "../components/User/Home/Stats"
 const home = () => {
     return (
         <div className="flex flex-cols-2">
-            <div className="w-[10%] border-r-[1.5px] border-black">
+            <div className="w-[4%] border-r-[1.5px] border-black relative">
                 <Sidebar />
             </div>
-            <div className="w-[90%]">
+            <div className="w-[96%]">
                 <Navigation />
                 <Stats />
                 <PremiumAddons />
