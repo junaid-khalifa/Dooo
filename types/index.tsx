@@ -56,7 +56,7 @@ export interface AddonProps {
 }
 
 export interface SelectProps {
-    name: string;
+    name: string | number;
 }
 
 export interface ResolutionProps {

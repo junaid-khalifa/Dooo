@@ -1,4 +1,4 @@
-import { SelectProps } from '../../types'
+import { SelectProps } from '../../../types'
 
 const Select = (props: SelectProps) => {
     return (

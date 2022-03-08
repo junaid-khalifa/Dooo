@@ -6,7 +6,7 @@ const Input = (props: InputProps) => {
             <input
                 type={props.type}
                 id={props.id}
-                className="rounded-md border-transparent my-1 appearance-none border w-full py-2 px-4 bg-[#F4F7F9] text-[#787C87] placeholder-[#787C87] text-base"
+                className="rounded-md border-transparent placeholder:text-xs my-[2px] appearance-none border w-full py-[1px] px-2 bg-[#F4F7F9] text-[#787C87] placeholder-[#787C87]"
                 placeholder={props.placeholder}
                 onChange={props.onChange}
                 value={props.value}
