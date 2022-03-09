@@ -318,7 +318,7 @@ const Settings = () => {
                             </div>
                             <div className='flex gap-2 items-center'>
                                 <h1 className='text-[#C5C7CD]'>Gold plan (100GB) - <span className='text-[#4954CB]'>$59/onetime</span></h1>
-                                <p>toggle</p>
+                                <Toggle />
                                 <BsPencilFill size={20} />
                                 <RiDeleteBin5Line size={20} />
                                 <RiShoppingCartLine size={20} />

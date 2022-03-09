@@ -20,7 +20,7 @@ const ManageUsers = () => {
     return (
         <div className="mx-4">
             <div className="flex flex-col justify-center items-center gap-2 mt-8">
-                <h1 className="text-lg font-[700]">Manage users</h1>
+                <h1 className="text-2xl font-[600]">Manage users</h1>
                 <Date />
             </div>
             <div className="flex justify-between items-center my-2">
