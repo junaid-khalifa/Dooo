@@ -10,7 +10,7 @@ const CouponTableData = () => {
         <input type="checkbox" className=' text-[#787C87]' />
       </td>
       <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-[#1E1E1F] text-xs text-center whitespace-nowrap p-4">1</td>
-      <th className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs text-center whitespace-nowrap p-4 text-left">
+      <th className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs text-center whitespace-nowrap p-4">
         HOLIDAY50
       </th>
       <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-[#1E1E1F] text-xs text-center whitespace-nowrap p-4">

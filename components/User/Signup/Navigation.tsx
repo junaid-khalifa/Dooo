@@ -1,41 +1,40 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import React, { useState } from 'react'
-import { NavProps } from '../../types'
+import { NavProps } from '../../../types'
 import { FiSearch } from 'react-icons/fi'
 
 const Navigation = () => {
-    const [hide, setHide] = useState<'none' | 'hidden'>('hidden')
-
+    const [show, setShow] = useState(false)
     function toggle(): void {
-        setHide('none')
+        setShow(!show)
     }
     return (
-
-        <nav className="bg-[#161616] border-gray-200 px-2 sm:px-4 py-2.5 rounded lg:px-[40px] md:pt-12 dark:bg-gray-800">
+        <nav className="bg-[#161616] border-gray-200 px-2 sm:px-4 py-2.5 rounded lg:px-[40px] md:pt-12">
             <div className="container flex flex-wrap justify-between items-center mx-auto">
                 <div className="flex">
-                    <button onClick={toggle} data-collapse-toggle="mobile-menu-4" className="md:hidden inline-flex items-center p-2 text-sm text-white">
+                    <button onClick={toggle} data-collapse-toggle="mobile-menu" className="md:hidden inline-flex items-center p-2 text-sm text-white">
                         <Image src='/bars.png' alt='bars' height='16px' width='21px' />
                     </button>
                     <Image src='/dooo-logo.png' height='33px' width='88px' alt='dooo' />
                 </div>
-                <div className="flex md:order-2">
-                    <div className='mt-4 pr-6 md:mt-0 md:pr-0'>
-                        <FiSearch size={25} className="md:mt-2 text-white cursor-pointer" />
-                    </div>
+                <div className="flex justify-between gap-4 md:gap-8 items-center md:order-2">
+                    <FiSearch size={25} className="md:mt-2 text-white cursor-pointer" />
                     <button className="text-white font-medium bg-gradient-to-r from-[#9A3EBF] via-[#C53660, #E93141] to-[#F98B51] rounded-lg text-sm px-5 py-2.5 text-center mr-3 md:mr-0 ">Sign Up</button>
                 </div>
-                <div className={`${hide} justify-between items-center w-full md:flex md:w-auto md:order-1" id="mobile-menu-4`}>
-                    <ul className="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium">
+                <div className={`${show ? 'hidden' : 'none'} justify-between items-center w-full md:flex md:w-auto md:order-1`} id="mobile-menu">
+                    <ul className="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium items-center">
                         <li>
                             <a href="#" className="block py-2 pr-4 pl-3 text-white md:p-0 ">Category</a>
                         </li>
                         <li>
                             <a href="#" className="block py-2 pr-4 pl-3 text-white md:p-0 ">Tract For Business</a>
                         </li>
-                        <li>
+                        <li className='relative'>
                             <a href="#" className="block py-2 pr-4 pl-3 text-white md:p-0 ">Teach on Tract</a>
+                            <div className='absolute hidden bg-gradient-to-r from-[#9A3EBF] via-[#E93141] to-[#F98B51] md:flex justify-center items-center rounded-2xl text-white text-xs px-[4px] text-center top-[-15px] right-0'>
+                                <p className='flex justify-center items-center'>new</p>
+                            </div>
                         </li>
                     </ul>
                 </div>

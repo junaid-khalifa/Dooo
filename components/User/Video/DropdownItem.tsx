@@ -1,5 +1,5 @@
 import { MdDeleteForever } from 'react-icons/md'
-import { DropdownItemProps } from '../../types'
+import { DropdownItemProps } from '../../../types'
 
 const DropdownItem = (props: DropdownItemProps) => {
     return (

@@ -1,4 +1,5 @@
-import { InputProps } from "../../types"
+import { BsCircle, BsEye, BsEyeSlash } from "react-icons/bs"
+import { InputProps } from "../../../types"
 
 const Input = (props: InputProps) => {
     return (
@@ -11,6 +12,9 @@ const Input = (props: InputProps) => {
                 onChange={props.onChange}
                 value={props.value}
             />
+            {props.placeholder === 'Email' && <BsCircle size={20} className="absolute top-6 right-2 text-white" />}
+            {props.placeholder === '8 Digit Pin' && <BsEyeSlash size={20} className="absolute top-6 right-2 text-white" />}
+            {props.placeholder === '8 digit Pin' && <BsEye size={20} className="absolute top-6 right-2 text-white" />}
         </div>
     )
 }

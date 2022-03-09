@@ -3,6 +3,7 @@ import { FaUsers } from 'react-icons/fa'
 import { AiFillStar } from "react-icons/ai"
 import { TiTick } from 'react-icons/ti'
 import VisitorsChart from "./VisitorsChart"
+import { DeviceChart } from "./DeviceChart"
 
 const Overview = () => {
     return (
@@ -75,7 +76,9 @@ const Overview = () => {
                 </div>
             </div>
             {/* Section 2 */}
-            <div className='col-span-1'></div>
+            <div className='col-span-1 bg-[#F2F5FA] rounded-xl mx-4'>
+                <DeviceChart />
+            </div>
         </div>
     )
 }

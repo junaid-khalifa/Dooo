@@ -1,16 +1,12 @@
 import React from 'react'
-import Navigation from '../components/User/Signup/Navigation'
-import Form from '../components/User/Signup/Form'
-import Footer from '../components/User/Signup/Footer'
+import Auth from '../components/User/Signup/Auth'
 
-const Auth = () => {
+const auth = () => {
     return (
-        <div className=' bg-[#161616] md:h-[100vh]'>
-            <Navigation />
-            <Form />
-            <Footer />
+        <div className='h-screen'>
+            <Auth />
         </div>
     )
 }
 
-export default Auth
+export default auth

@@ -9,11 +9,9 @@ import { useRouter } from 'next/router'
 const Sidebar = () => {
     const router = useRouter()
     let bg = 'bg-gradient-to-r text-white'
-    const paths = ['dashboard', 'manage-users', 'notifications', 'pricing', 'coupons']
-    // text color li-bg
-    // bg-gradient-to-r
+
     return (
-        <aside className="absolute top-0 bottom-0 left-0">
+        <aside className="absolute bottom-0 top-0 left-0 shadow-2xl w-[15%]">
             <div className="overflow-y-auto py-4 px-3">
                 <div className="flex mb-5 items-center">
                     <Image src='/ellipse_1.png' className='text-black cursor-pointer' alt='dooo' height='33px' width='23px' />
