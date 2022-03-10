@@ -1,8 +1,9 @@
 import { useState } from "react"
-import { MdDeleteForever } from 'react-icons/md'
+import { MdDelete, MdDeleteForever } from 'react-icons/md'
 import { FiPlus } from "react-icons/fi"
 import { AiOutlineMinus } from 'react-icons/ai'
 import DropdownItem from "../DropdownItem"
+import Select from "../../Input/Select"
 
 const AddCaption = () => {
     const [isList, setIsList] = useState(false);
@@ -22,16 +23,29 @@ const AddCaption = () => {
                 Add Caption
             </div>
             {isList && (
-                <div className="w-64 h-72 absolute overflow-auto mt-2 p-4 bg-white shadow rounded">
-                    <DropdownItem category={"Category 1"} />
-                    <DropdownItem category={"Category 2"} />
-                    <DropdownItem category={"Category 3"} />
-                    <DropdownItem category={"Category 4"} />
-                    <DropdownItem category={"Category 5"} />
-                    <DropdownItem category={"Category 6"} />
-                    <div>
-                        <button className="flex justify-start text-xs bg-gray rounded-md mt-6 font-medium py-2 w-full leading-3 text-dark items-center"><FiPlus className="mx-2" size={20} />Create new category</button>
-                    </div>
+                <div className="w-full mt-2 p-4 bg-white rounded">
+                    <form className="flex flex-col relative">
+                        <div className="flex justify-between gap-32 bg-[#F4F7F9] items-center border px-1">
+                            <h1 className="text-xs">Video language</h1>
+                            <Select name='English' />
+                        </div>
+                        <div className="flex justify-between flex-row items-center">
+                            <textarea
+                                name="caption-text"
+                                id="caption-text"
+                                rows={3}
+                                className="w-full outline-none border my-1 mr-1 px-1 placeholder:text-xs"
+                                placeholder="Here you can insert the caption text..."></textarea>
+                            <div className="flex flex-col my-1 justify-between">
+                                <input type="text" name="" id="" className="outline-none border w-16 my-1 p-1" placeholder="00:00" />
+                                <input type="text" name="" id="" className="outline-none border w-16 my-1 p-1" placeholder="00:01" />
+                            </div>
+                            <div className="flex flex-row gap-1 absolute -left-12">
+                                <MdDelete className="cursor-pointer" size={20} />
+                                <FiPlus className="cursor-pointer" size={20} />
+                            </div>
+                        </div>
+                    </form>
                 </div>
             )}
             <style>

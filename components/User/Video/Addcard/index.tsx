@@ -1,11 +1,21 @@
 import { useState } from "react"
-import { MdDeleteForever } from 'react-icons/md'
+import { MdDelete, MdKeyboardArrowDown, MdKeyboardArrowUp } from 'react-icons/md'
 import { FiPlus } from "react-icons/fi"
 import { AiOutlineMinus } from 'react-icons/ai'
 import DropdownItem from "../DropdownItem"
+import Input from "../Input"
 
 const Addcard = () => {
-    const [isList, setIsList] = useState(false);
+    const [isList, setIsList] = useState(false)
+    const [show, setShow] = useState(false)
+
+    const handleChange = () => {
+
+    }
+
+    const toggle = () => {
+        setShow(!show)
+    }
 
     return (
         <div>
@@ -22,16 +32,21 @@ const Addcard = () => {
                 Add Card/Annotation
             </div>
             {isList && (
-                <div className="w-64 h-72 absolute overflow-auto mt-2 p-4 bg-white shadow rounded">
-                    <DropdownItem category={"Category 1"} />
-                    <DropdownItem category={"Category 2"} />
-                    <DropdownItem category={"Category 3"} />
-                    <DropdownItem category={"Category 4"} />
-                    <DropdownItem category={"Category 5"} />
-                    <DropdownItem category={"Category 6"} />
-                    <div>
-                        <button className="flex justify-start text-xs bg-gray rounded-md mt-6 font-medium py-2 w-full leading-3 text-dark items-center"><FiPlus className="mx-2" size={20} />Create new category</button>
+                <div className="w-full overflow-auto mt-2 p-4 bg-white shadow rounded">
+                    <div className="flex flex-row gap-2 items-center">
+                        <FiPlus size={20} className='cursor-pointer' />
+                        <div className="bg-[#F5F8FA] px-4 py-2 flex flex-row items-center gap-2">
+                            <input
+                                type="text"
+                                placeholder="Enter card text here"
+                                className="outline-none bg-[#F5F8FA]" />
+                            <p className="border px-1 py-0.5" >02:04</p>
+                            {!show ? <MdKeyboardArrowDown onClick={toggle} className="cursor-pointer" size={20} /> : <MdKeyboardArrowUp onClick={toggle} className="cursor-pointer" size={20} />}
+                            <MdDelete className="cursor-pointer" size={20} />
+                        </div>
                     </div>
+                    {show && (<Input name={""} placeholder={"Insert your link here"} type={"text"} onChange={handleChange} id={""} value={""} />
+                    )}
                 </div>
             )}
             <style>

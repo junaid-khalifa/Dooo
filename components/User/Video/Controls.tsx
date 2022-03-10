@@ -1,6 +1,9 @@
 import { useState } from "react"
 import DropdownItem from "./DropdownItem"
 import { MdKeyboardArrowDown, MdKeyboardArrowRight } from "react-icons/md"
+import ControlOption from "./ControlOption"
+
+const controls = ['Volume', 'Fullscreen', 'Closed Caption', 'Playback Speed', 'Quality', 'Embed', 'Download', 'Facebook Sharing', 'Twitter Sharing', '10x Backward', '10x Forward', 'Show all chapters', 'Big play button', 'Current Time', 'Duration', 'Progress']
 
 const Controls = () => {
     const [isList, setIsList] = useState(false)
@@ -20,10 +23,10 @@ const Controls = () => {
                 )}
             </div>
             {isList && (
-                <div className="absolute overflow-auto mt-2 p-4 bg-white shadow rounded">
-                    <DropdownItem category={"Preset 1"} />
-                    <DropdownItem category={"Preset 2"} />
-                    <DropdownItem category={"Preset 3"} />
+                <div className="relative mt-2 p-4 bg-white shadow rounded">
+                    {controls.map((element, index) => (
+                        <ControlOption key={index} label={element} />
+                    ))}
                 </div>
             )}
             <style>

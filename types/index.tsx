@@ -78,3 +78,12 @@ export interface ZonesProps {
     storage: string;
     checked: boolean;
 }
+
+export interface SettingsOptionProp {
+    checked: boolean;
+    label: string;
+}
+
+export interface ControlOptionProp {
+    label: string;
+}

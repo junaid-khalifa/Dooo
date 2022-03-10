@@ -17,7 +17,7 @@ const Navigation = () => {
     const modalStyle = hide ? 'hidden' : 'none'
 
     return (
-        <div className='overflow-hidden'>
+        <div className='overflow-hidden mx-8 w-11/12'>
             <nav className='flex my-4 justify-between'>
                 <div className='float-left'>
                     <div className='md:hidden'>
@@ -26,15 +26,16 @@ const Navigation = () => {
                     <div className='md:hidden'>
                         <Image src='/Logo.png' height='26px' width='26px' alt='dooo' />
                     </div>
+
                 </div >
                 <div className='flex justify-end'>
-                    {router.pathname !== '/upload' || '/addons' && (
+                    {router.pathname === '/home' && (
                         <div className='md:float-right'>
-                            <button className='text-white text-lg bg-black py-2 px-3 rounded-md'>+Upload Video</button>
+                            <button className='text-white text-lg bg-black py-2 px-3 rounded-md'>+ Upload Video</button>
                         </div>
                     )}
                     <div className='flex justify-end md:float-right'>
-                        {router.pathname !== '/upload' || '/addons' && (
+                        {router.pathname === '/upload' || '/addons' && (
                             <div className='text-black mt-2 px-2 border-[#1E1E1F] cursor-pointer'>
                                 <Link href='/player' passHref>
                                     <Image src='/internet.png' alt='world' height='30px' width='30px' />

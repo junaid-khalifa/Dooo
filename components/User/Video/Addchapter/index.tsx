@@ -1,8 +1,9 @@
 import { useState } from "react"
-import { MdDeleteForever } from 'react-icons/md'
+import { MdDelete, MdDeleteForever } from 'react-icons/md'
 import { FiPlus } from "react-icons/fi"
 import { AiOutlineMinus } from 'react-icons/ai'
 import DropdownItem from "../DropdownItem"
+import { BsFillStarFill } from "react-icons/bs"
 
 const Addchapter = () => {
     const [isList, setIsList] = useState(false);
@@ -22,15 +23,15 @@ const Addchapter = () => {
                 Add a chapter/moment
             </div>
             {isList && (
-                <div className="w-64 h-72 absolute overflow-auto mt-2 p-4 bg-white shadow rounded">
-                    <DropdownItem category={"Category 1"} />
-                    <DropdownItem category={"Category 2"} />
-                    <DropdownItem category={"Category 3"} />
-                    <DropdownItem category={"Category 4"} />
-                    <DropdownItem category={"Category 5"} />
-                    <DropdownItem category={"Category 6"} />
-                    <div>
-                        <button className="flex justify-start text-xs bg-gray rounded-md mt-6 font-medium py-2 w-full leading-3 text-dark items-center"><FiPlus className="mx-2" size={20} />Create new category</button>
+                <div className="w-full mt-2 p-4 bg-white rounded relative">
+                    <div className="flex flex-row items-center gap-2">
+                        <input type="text" placeholder="0:00:00:00" className="outline-none border p-2 w-28" />
+                        <input type="text" placeholder="Enter chapter title here" className="outline-none border p-2" />
+                        <BsFillStarFill className="text-[#FFA701] cursor-pointer" size={25} />
+                        <div className="flex flex-row gap-1 absolute -left-8">
+                            <MdDelete className="cursor-pointer" size={20} />
+                            <FiPlus className="cursor-pointer" size={20} />
+                        </div>
                     </div>
                 </div>
             )}

@@ -8,7 +8,7 @@ const Modal = (props: ModalProps) => {
     }
 
     return (
-        <div className={`${props.modalStyle} py-12 bg-[#383838] opacity-95 transition duration-150 ease-in-out z-10 absolute left-0 right-0 top-0 bottom-0`} id="modal">
+        <div className={`${props.modalStyle} py-12 bg-[#383838] opacity-95 transition duration-150 ease-in-out z-10 absolute left-0 right-0 top-0`} id="modal">
             <div role="alert" className="container mx-auto w-11/12 md:w-2/3 max-w-2xl">
                 <div className="relative py-8 px-5 md:px-12 bg-white rounded border border-gray-400">
                     <form>

@@ -1,8 +1,11 @@
 import { useState } from "react"
 import { MdKeyboardArrowDown, MdKeyboardArrowRight } from "react-icons/md"
-import DropdownItem from "./DropdownItem"
+import SettingsOption from "./SettingsOption";
+
+const settingsOptionsAdvanced = ['Autoplay', 'Allow Pause', 'Control bar', 'Round Corners', 'Sticky on Scroll', 'Save play position', 'Preload', 'Loop', 'Muted', 'Play captions during muted autoplay'];
 
 const AdvancedSettings = () => {
+
     const [isList, setIsList] = useState(false)
 
     return (
@@ -20,10 +23,21 @@ const AdvancedSettings = () => {
                 )}
             </div>
             {isList && (
-                <div className="absolute overflow-auto mt-2 p-4 bg-white shadow rounded">
-                    <DropdownItem category={"Preset 1"} />
-                    <DropdownItem category={"Preset 2"} />
-                    <DropdownItem category={"Preset 3"} />
+                <div className="mt-2 p-4 bg-white rounded">
+                    <div className="relative">
+                        {settingsOptionsAdvanced.map((element, index) => (
+                            <SettingsOption key={index} checked={false} label={element} />
+                        ))}
+                        <div className="flex justify-between items-center">
+                            <div className="flex gap-2 items-center">
+                                <span className="ml-5">Video Size</span>
+                            </div>
+                            <div className='flex gap-2'>
+                                <input type='text | number' placeholder="1280" className="border w-16 p-1" />
+                                <input type='text | number' placeholder="720" className="border w-16 p-1" />
+                            </div>
+                        </div>
+                    </div>
                 </div>
             )}
             <style>

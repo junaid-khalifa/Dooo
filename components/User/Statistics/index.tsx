@@ -1,4 +1,5 @@
 import React from 'react'
+import Navigation from '../Home/Navigation'
 import AvgWatchTimePerCountry from './AvgWatchTimePerCountry'
 import Bandwidth from './Bandwidth'
 import Requests from './Request'
@@ -9,6 +10,7 @@ import WatchTime from './WatchTime'
 const Statistics = () => {
   return (
     <div>
+      <Navigation />
       <Views />
       <WatchTime />
       <ViewsPerCountry />

@@ -63,11 +63,13 @@ export const data = {
 
 const Views = () => {
     return (
-        <div className="flex items-center justify-center py-8 px-4">
+        <div className="flex items-center justify-center pb-8 px-4">
             <div className="w-11/12">
                 <div className="flex flex-col justify-between h-full">
                     <div>
+                        <h1 className='font-[600] text-2xl flex items-center mb-16'>Statistics</h1>
                         <div className="lg:flex w-full justify-between">
+
                             <h3 className="text-gray-600 dark:text-gray-400 leading-5 text-base md:text-xl font-bold">Total Views</h3>
                             <div className="flex items-center justify-between lg:justify-start mt-2 md:mt-4 lg:mt-0">
                             </div>
