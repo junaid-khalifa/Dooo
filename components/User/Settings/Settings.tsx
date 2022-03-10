@@ -1,6 +1,6 @@
 import React, { ChangeEvent } from 'react'
 import { BiCamera, BiEditAlt } from 'react-icons/bi'
-import { BsCheckCircleFill, BsFillPlusCircleFill, BsPencilFill } from 'react-icons/bs'
+import { BsCheckCircleFill, BsFillPlusCircleFill, BsFillStarFill, BsPencilFill } from 'react-icons/bs'
 import { MdKeyboardArrowRight } from 'react-icons/md'
 import { RiDeleteBin5Line, RiShoppingCartLine } from 'react-icons/ri'
 import Input from '../Input/Input'
@@ -109,7 +109,7 @@ const Settings = () => {
                             <h1 className='font-[700] text-lg text-white'>Advertisement Options</h1>
                             <MdKeyboardArrowRight className='text-white' size={25} />
                         </div>
-                        <div className='my-4'>
+                        <div className='my-4 px-2'>
                             <div className='grid grid-cols-2 items-center'>
                                 <h1 className='font-bold'>VAST tag URL</h1>
                                 <div className='flex justify-around items-center'>
@@ -123,7 +123,7 @@ const Settings = () => {
                         <div className='mx-2'>
                             <p className='text-xs text-[#787C87]'>to automatically display VAST based ads in your videos.</p>
                         </div>
-                        <div className='flex justify-between mt-4'>
+                        <div className='flex justify-between mt-4 px-2'>
                             <h1 className='font-bold'>VI.AI publisher ID</h1>
                             <div className='flex justify-center m-auto'>
                                 <CgDanger size={15} />
@@ -137,7 +137,7 @@ const Settings = () => {
                             <h1 className='font-[700] text-lg text-white'>Add Watermark</h1>
                             <MdKeyboardArrowRight className='text-white' size={25} />
                         </div>
-                        <div className='flex justify-between m-2'>
+                        <div className='flex justify-between m-2 px-2'>
                             <button className='whitespace-nowrap bg-gradient-to-r from-[#FD6D4E] to-[#FDA34F] flex justify-center gap-2 text-sm rounded items-center px-3 py-1 text-white'>
                                 <ImUpload3 className='text-white' size={15} />UPLOAD WATERMARK</button>
                             <div className='bg-[#EDD038] h-9 w-9'>
@@ -175,30 +175,30 @@ const Settings = () => {
                         </div>
                         <div className='p-2'>
                             <div className='flex'>
-                                <div>
-                                    <div className='flex justify-between'>
+                                <div className='mb-2'>
+                                    <div className='flex justify-between relative mb-2'>
                                         <h1>yousaf@gmail.com</h1>
                                         <h1>xxxxxx</h1>
                                         <BiEditAlt className='bg-[#EDF5FF]' size={25} />
+                                        <RiDeleteBin5Line className='items-center absolute -right-10 cursor-pointer' size={25} />
+                                        <h1 className='font-[700] text-xs absolute -right-24'>Primary <br />Account</h1>
                                     </div>
-                                    <div className='flex justify-between gap-1'>
+                                    <div className='flex justify-between gap-1 relative'>
                                         <Input name={''} placeholder={'Enter email address'} type={'text'} onChange={handleChange} id={''} value={''} />
                                         <Input name={''} placeholder={'Enter password'} type={'text'} onChange={handleChange} id={''} value={''} />
+                                        <RiDeleteBin5Line className='items-center absolute -right-10 top-3 cursor-pointer' size={25} />
+                                    </div>
+                                    <div className='flex justify-end'>
+                                        <button className='px-4 py-2 text-[#6075DA] bg-[#EDF5FF] font-[900] rounded'>+ Add more</button>
                                     </div>
                                 </div>
-                                <div className='items-center'>
-                                    <RiDeleteBin5Line className='items-center cursor-pointer' size={25} />
-                                    <RiDeleteBin5Line className='items-center cursor-pointer' size={25} />
-                                </div>
                             </div>
-                            <div className='flex justify-center'>
-                                <button className='px-4 py-2 text-[#6075DA] bg-[#EDF5FF] font-[900] rounded'>+ Add more</button>
-                            </div>
+
                         </div>
                     </div>
                     {/* Google analytics */}
                     <div>
-                        <div>
+                        <div className=''>
                             <div className='flex justify-between items-center bg-[#CAEBF2] p-2'>
                                 <h1 className='font-[700] text-lg'>Google Analytics, Retargeting Pixels & Google Tag Manager</h1>
                                 <MdKeyboardArrowRight size={25} />
@@ -208,7 +208,7 @@ const Settings = () => {
 
                                 </div>
                             </div>
-                            <div className='grid grid-cols-4 gap-2'>
+                            <div className='grid grid-cols-4 gap-2 px-4'>
                                 <div className='col-span-3 gap-2'>
                                     <Input name={''} placeholder={'Enter Google Analytics script'} type={'text'} onChange={handleChange} id={''} value={''} />
                                     <Input name={''} placeholder={'Enter GTM or retargeting pixel script'} type={'text'} onChange={handleChange} id={''} value={''} />
@@ -228,7 +228,7 @@ const Settings = () => {
 
                             </div>
                         </div>
-                        <div>
+                        <div className='px-4'>
                             <div className='flex items-center gap-2'>
                                 <Input name={''} placeholder={'Enter your domain'} type={'text'} onChange={handleChange} id={''} value={''} />
                                 <button className='px-4 py-2 text-[#6075DA] bg-[#EDF5FF] font-[700] rounded'>Add</button>
@@ -242,7 +242,7 @@ const Settings = () => {
                             <h1 className='font-[700] text-lg'>Autoresponder Connections</h1>
                             <MdKeyboardArrowRight size={25} />
                         </div>
-                        <div className='flex justify-between py-4'>
+                        <div className='flex justify-between py-4 px-4'>
                             <div className="w-[226px] h-[116px] bg-[#EBEBEB] border-[2px] border-[#323232] border-dashed flex justify-center">
                                 <div className='flex flex-col justify-center'>
                                     <p className='flex justify-center text-center'><BsFillPlusCircleFill size={30} /></p>
@@ -252,7 +252,7 @@ const Settings = () => {
                             <div className='bg-[#EDD038] h-9 w-9 m-auto'>
                             </div>
                         </div>
-                        <div>
+                        <div className='px-4'>
                             <h1 className='text-sm font-bold'>Active Connections</h1>
                             <div className='h-116px w-[226px] border'>
                                 <div className="h-[58px] bg-[#2C62DF] flex justify-center">
@@ -277,7 +277,7 @@ const Settings = () => {
                             <h1 className='font-[700] text-lg'> White label for agency</h1>
                             <MdKeyboardArrowRight size={25} />
                         </div>
-                        <div className='flex gap-2 my-4'>
+                        <div className='flex gap-2 my-4 px-4'>
                             <div className="w-[226px] h-[58px] bg-[#EBEBEB] border-[2px] border-[#323232] border-dashed flex justify-center">
                                 <div className='flex flex-row justify-center m-auto items-center gap-2'>
                                     <p className='text-center'><BsFillPlusCircleFill size={30} /></p>
@@ -300,7 +300,7 @@ const Settings = () => {
 
                             </div>
                         </div>
-                        <div className='flex justify-between gap-2'>
+                        <div className='flex justify-between gap-2 px-4'>
                             <div className='border border-sky-600 px-3 py-2 flex justify-between items-center w-full'>
                                 <h1>Interface - 1 </h1><AiFillEye />
                             </div>
@@ -311,8 +311,8 @@ const Settings = () => {
                                 <h1>Interface - 3 </h1><AiFillEye />
                             </div>
                         </div>
-                        <div>
-                            <div>
+                        <div className='px-4'>
+                            <div className=''>
                                 <h1 className='font-bold text-md'>Active Pricing Plans</h1>
                                 <hr className='w-40 text-black' />
                             </div>
@@ -324,8 +324,12 @@ const Settings = () => {
                                 <RiShoppingCartLine size={20} />
                             </div>
                         </div>
-                        <div>Star</div>
-                        <div>
+                        <div className='flex flex-row gap-2 justify-between my-8 items-center mx-4'>
+                            <div className='bg-black h-2 bg-gradient-to-l from-black to-white w-full rounded' />
+                            <BsFillStarFill size={75} />
+                            <div className='bg-black h-2 bg-gradient-to-r from-black to-white rounded w-full' />
+                        </div>
+                        <div className='px-4'>
                             <div>
                                 <h1 className='font-bold text-md'>Active Users</h1>
                                 <hr className='w-40 text-black' />
@@ -344,7 +348,11 @@ const Settings = () => {
                                 </div>
                             </div>
                             <ActiveUsers />
-                            <div>STARS</div>
+                            <div className='flex flex-row gap-2 justify-between my-8 items-center mx-4'>
+                                <div className='bg-black h-2 bg-gradient-to-l from-black to-white w-full rounded' />
+                                <BsFillStarFill size={75} />
+                                <div className='bg-black h-2 bg-gradient-to-r from-black to-white rounded w-full' />
+                            </div>
                             <div className='grid gap-3'>
                                 <div className='grid grid-cols-3 gap-4 items-center'>
                                     <h1 className='col-span-1 font-bold'>Login URL for agency customers</h1>
@@ -440,7 +448,7 @@ const Settings = () => {
                             <h1 className='font-[700] text-lg'>Usage Stats</h1>
                             <MdKeyboardArrowRight size={25} />
                         </div>
-                        <div className='flex my-8'>
+                        <div className='flex my-8 px-4'>
                             <div>
                                 <h1 className='font-bold'>Total Videos</h1>
                                 <h1 className='font-bold'>Bandwidth Used</h1>
@@ -455,9 +463,9 @@ const Settings = () => {
                                 <h1 className='text-[#6089DA] font-bold'>Gold Plan</h1>
                             </div>
                         </div>
-                        <div className='grid grid-cols-2 gap-2'>
+                        <div className='grid grid-cols-2 gap-2 px-4'>
                             <div className='col-span-1'>
-                                <Select name={'Switch your plane'} />
+                                <Select name={'Switch your plan'} />
                                 <p className='text-xs text-[#6997DC]'>If you will downgrade your plan, then all latest videos exceeding the storage
                                     limit of your new plan will automatically get removed. So remove un-wanted
                                     videos before changing the plan to avoid any inconvenience.</p>
@@ -466,7 +474,7 @@ const Settings = () => {
                                 <button className='px-6 py-2 text-white bg-[#1E1E1F] font-[600] rounded mt-1'>Change</button>
                             </div>
                         </div>
-                        <div className='grid grid-cols-3 my-4'>
+                        <div className='grid grid-cols-3 my-4 px-4'>
                             <div className='border p-2 col-span-2 flex justify-between'>
                                 <div className='items-center'>
                                     <h1 className=''>Payment</h1>
@@ -481,7 +489,7 @@ const Settings = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className='grid grid-cols-2'>
+                        <div className='grid grid-cols-2 px-4'>
                             <div className='col-span-1'>
                                 <h1 className='font-bold'>Active Pricing Plan & Addons:</h1>
                                 <div className='flex justify-between'>
@@ -498,17 +506,17 @@ const Settings = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className='grid grid-cols-2 mt-8'>
+                        <div className='grid grid-cols-2 mt-8 px-4'>
                             <div className='col-span-1'>
                                 <h1 className='font-bold'>Total payment:</h1>
                                 <h1>$94.50/Month <span className='text-[#6089DA]'>(Addons payment is included in this amount)</span></h1>
                                 <h1>Your plan will renew on Jan.16, 2022.</h1>
                             </div>
                         </div>
-                        <div className='grid grid-cols-3'>
+                        <div className='grid grid-cols-3 px-4'>
                             <hr className='my-8 col-span-2 border-gray-600 border-t-[2px]' />
                         </div>
-                        <div className='grid grid-cols-3'>
+                        <div className='grid grid-cols-3 px-4'>
                             <div className='col-span-2 flex items-start gap-3'>
                                 <h1 className='whitespace-nowrap font-bold items-center mt-3'>API KEY</h1>
                                 <div>
@@ -522,7 +530,7 @@ const Settings = () => {
                         <div className='grid grid-cols-3'>
                             <hr className='my-8 col-span-2 border-gray-600 border-t-[2px]' />
                         </div>
-                        <div className='grid grid-cols-3 mb-8'>
+                        <div className='grid grid-cols-3 mb-8 px-4'>
                             <div className='flex col-span-2 items-start gap-4'>
                                 <button className='px-6 py-2 text-white bg-[#1E1E1F] font-[600] rounded mt-1 items-center whitespace-nowrap'>Delete account permanently</button>
                                 <p className='text-sm my-2'><span className='text-[#EE4A4F] font-bold'>Warning message:</span> I understand that all of my videos will be permanently removed. (show this as a popup)</p>

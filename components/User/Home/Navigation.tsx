@@ -31,7 +31,9 @@ const Navigation = () => {
                 <div className='flex justify-end'>
                     {router.pathname === '/home' && (
                         <div className='md:float-right'>
-                            <button className='text-white text-lg bg-black py-2 px-3 rounded-md'>+ Upload Video</button>
+                            <Link href='/upload' passHref>
+                                <button className='text-white text-lg bg-black py-2 px-3 rounded-md'>+ Upload Video</button>
+                            </Link>
                         </div>
                     )}
                     <div className='flex justify-end md:float-right'>

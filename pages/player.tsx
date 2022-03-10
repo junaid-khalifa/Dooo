@@ -3,7 +3,7 @@ import Player from "../components/User/Player/Player"
 
 const player = () => {
     return (
-        <div className="flex flex-cols-2">
+        <div className="flex relative">
             <div className="w-[4%] border-r-[1.5px] border-black">
                 <Sidebar />
             </div>
@@ -14,4 +14,4 @@ const player = () => {
     )
 }
 
-export default Player
+export default player

@@ -3,7 +3,7 @@ import Stats from "../components/User/Statistics"
 
 const statistics = () => {
     return (
-        <div className="flex flex-cols-2">
+        <div className="flex">
             <div className="w-[4%] border-r-[1.5px] border-black">
                 <Sidebar />
             </div>

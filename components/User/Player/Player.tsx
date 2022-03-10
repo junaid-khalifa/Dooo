@@ -12,7 +12,7 @@ import PlayerTheme from './PlayerTheme'
 
 const Player = () => {
     return (
-        <div>
+        <div className=''>
             <div className='flex justify-center items-center my-8'>
                 <div className='flex flex-col justify-center'>
                     <h1 className='text-xl leading-9 m-auto text-[#1E1E1F] font-[800]'>Universal Player</h1>
