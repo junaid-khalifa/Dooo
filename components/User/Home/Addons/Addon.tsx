@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import { AddonProps } from '../../../types'
+import { AddonProps } from '../../../../types'
 
 const Addon = (props: AddonProps) => {
 

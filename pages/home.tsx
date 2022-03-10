@@ -6,7 +6,7 @@ import Stats from "../components/User/Home/Stats"
 const home = () => {
     return (
         <div className="flex flex-cols-2">
-            <div className="w-[4%] border-r-[1.5px] border-black relative">
+            <div className="w-[4%] sm:border-r-[1.5px] sm:border-black relative">
                 <Sidebar />
             </div>
             <div className="w-[96%]">
