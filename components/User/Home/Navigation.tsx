@@ -17,7 +17,7 @@ const Navigation = () => {
     const modalStyle = hide ? 'hidden' : 'none'
 
     return (
-        <div className='overflow-hidden md:mx-8 mx-2 w-11/12'>
+        <div className='overflow-hidden mx-auto md:mx-8 sm:mx-2 w-11/12'>
             <nav className='flex my-4 justify-between'>
                 <div className='flex flex-row items-center gap-1 float-left'>
                     <div className='flex sm:hidden'>

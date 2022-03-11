@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { FiPlus } from "react-icons/fi"
-import { DropDownProps } from "../../types";
+import { DropDownProps } from "../../../types"
 
 const Dropdown = (props: DropDownProps) => {
     const [isList, setIsList] = useState(false);

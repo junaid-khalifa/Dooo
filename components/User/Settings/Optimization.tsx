@@ -1,10 +1,10 @@
 import { CgDanger } from "react-icons/cg"
-import { OptimizationProps } from "../../types"
+import { OptimizationProps } from "../../../types"
 import Toggle from "../Toggle"
 
 const Optimization = (props: OptimizationProps) => {
     return (
-        <div className='flex gap-2 items-center'>
+        <div className='flex gap-2 items-center lg:col-span-1'>
             <Toggle />
             <h1 className='font-bold'>{props.text}</h1>
             <CgDanger className='items-center text-black' />

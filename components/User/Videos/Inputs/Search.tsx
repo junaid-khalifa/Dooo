@@ -3,8 +3,8 @@ import { BsSearch } from 'react-icons/bs'
 
 const Search = () => {
     return (
-        <div>
-            <BsSearch size={20} className='absolute text-black left-7 z-20 top-[24px]' />
+        <div className='relative'>
+            <BsSearch size={20} className='absolute text-black left-3 z-20 top-4' />
             <input
                 type="text"
                 className="block w-full p-3 pl-10 leading-normal rounded focus:border-transparent focus:outline-none text-[#787C87] bg-[#F4F7F9]"

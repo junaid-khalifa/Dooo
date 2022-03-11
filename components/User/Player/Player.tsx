@@ -9,24 +9,38 @@ import Controls from '../Video/Controls'
 import LogoPosition from '../Video/LogoPosition'
 import PutLogo from '../Video/PutLogo'
 import PlayerTheme from './PlayerTheme'
+import Image from 'next/image'
 
 const Player = () => {
     return (
-        <div className=''>
-            <div className='flex justify-center items-center my-8'>
+        <div className='relative'>
+            {/* Nav */}
+            <div className='flex flex-row items-center gap-1 absolute top-1 left-0 sm:hidden ml-2'>
+                <div className='flex sm:hidden'>
+                    <Image src='/home-bar.png' alt='bars' height='16px' width='21px' />
+                </div>
+                <div className='flex sm:hidden'>
+                    <Image src='/Logo.png' className='object-contain' height='26px' width='26px' alt='dooo' />
+                </div>
+            </div >
+
+            {/* Header settings page */}
+            <div className='flex gap-4 justify-center items-center my-8 relative'>
                 <div className='flex flex-col justify-center'>
                     <h1 className='text-xl leading-9 m-auto text-[#1E1E1F] font-[800]'>Universal Player</h1>
-                    <p className='text-[#1E1E1F] w-[36rem]'>Paste this script in your website’s header
+                    <p className='text-[#1E1E1F] text-xs sm:text-sm md:text-md mx-8'>Paste this script in your website’s header
                         to automatically apply our player to videos
                         that are alreday existed on your website you will add in future.</p>
                 </div>
-                <div className='flex justify-end bg-[#EDD038] h-9 w-9'>
 
-                </div>
             </div>
-            <div className='flex flex-cols-2 mt-4'>
+
+            <div className='text-center bg-[#EDD038] h-9 w-9 absolute -top-2 right-0 m-2'>
+            </div>
+
+            <div className='lg:grid lg:grid-cols-2 lg:divide-x-2 divide-black mt-4'>
                 {/* Left */}
-                <div className='mx-auto'>
+                <div className='mx-2 sm:mx-4 md:mx-8'>
                     <div>
                         <h1 className='my-2 text-sm'>Select Player Theme</h1>
                         <PlayerTheme />
@@ -102,13 +116,16 @@ const Player = () => {
                         <button className='px-6 py-2 rounded-md text-white bg-black whitespace-nowrap'>Generate Script</button>
                     </div>
                 </div>
+
                 {/* Border */}
-                <div className='border-r-[2px] border-black'></div>
+                <hr className='lg:hidden w-full border-t-black border-t-2 my-8 px-2' />
                 {/* Right */}
-                <div className='mx-auto'>
-                    <div >
-                        <h1>Preview</h1>
-                        <video height='270px' width='482px' src="" controls></video>
+                <div className=''>
+                    <div className='mx-2 sm:mx-4 md:mx-8'>
+                        <h1 className='text-center'>Preview</h1>
+                        <div className='flex justify-center flex-col items-center'>
+                            <video height='270px' width='482px' src="" controls></video>
+                        </div>
                         <div className="flex border justify-between my-4 h-[200px] pt-2 px-2">
                             <h1>
                                 script text

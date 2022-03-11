@@ -27,13 +27,24 @@ const Settings = () => {
     }
 
     return (
-        <div>
+        <div className='mx-2 sm:mx-0 relative'>
+            {/* Nav */}
+            <div className='flex flex-row items-center gap-1 float-left absolute top-2 left-0 sm:hidden'>
+                <div className='flex sm:hidden'>
+                    <Image src='/home-bar.png' alt='bars' height='16px' width='21px' />
+                </div>
+                <div className='flex sm:hidden'>
+                    <Image src='/Logo.png' className='object-contain' height='26px' width='26px' alt='dooo' />
+                </div>
+            </div >
+
             {/* Header settings page */}
-            <div className='flex justify-center items-center my-8'>
-                <h1 className='flex justify-center text-xl leading-9 m-auto text-[#1E1E1F] font-[800]'>Account Settings</h1>
-                <button className='px-8 bg-[#E1FFF2] flex justify-end rounded py-2 text-[#31B37D] text-[900] mr-2'>SAVE</button>
+            <div className='flex flex-col gap-4 justify-center items-center my-8'>
+                <h1 className='flex justify-center text-2xl leading-9 m-auto text-[#1E1E1F] font-[700]'>Account Settings</h1>
+                <button className='px-8 bg-[#E1FFF2] w-full sm:w-auto text-center rounded py-2 text-[#31B37D] text-[900] mr-2'>SAVE</button>
             </div>
-            <div className='grid grid-cols-3'>
+
+            <div className='flex flex-col lg:grid lg:grid-cols-3'>
                 {/* //Left */}
                 <div className='col-span-1 gap-2 border-x-[1px] border-black'>
                     {/* Enabled resolutions */}
@@ -42,13 +53,13 @@ const Settings = () => {
                             <h1 className='font-[700] text-lg text-white'>Enabled Resolutions</h1>
                             <MdKeyboardArrowRight className='text-white' size={25} />
                         </div>
-                        <div className='grid grid-cols-3'>
+                        <div className='sm:grid sm:grid-cols-2 lg:grid-cols-3'>
                             <Resolution value1={'240p (352 x 240)'} value2={'600 Kbps'} checked={true} />
                             <Resolution value1={'360p (640 x 360)'} value2={'800 Kbps'} checked={true} />
                             <Resolution value1={'480p (842 x 480)'} value2={'1400 Kbps'} checked={true} />
                             <Resolution value1={'720p (1280 x 720)'} value2={'2800 Kbps'} checked={true} />
-                            <hr className='my-2 col-span-3 border-gray-600 border-t-[1px]' />
-                            <div className='flex justify-between col-span-3'>
+                            <hr className='my-2 sm:col-span-2 lg:col-span-3 border-gray-600 border-t-[1px]' />
+                            <div className='flex justify-between col-span-2 lg:col-span-3'>
                                 <Resolution value1={'1080p (1920 x 1080)'} value2={'5000 Kbps'} checked={true} />
                                 <div className='bg-[#EDD038] h-9 w-9'>
                                 </div>
@@ -64,10 +75,10 @@ const Settings = () => {
                             <h1 className='font-[700] text-lg text-white'>Optimization & Security Options</h1>
                             <MdKeyboardArrowRight className='text-white' size={25} />
                         </div>
-                        <div>
+                        <div className='sm:grid sm:grid-cols-2 lg:flex lg:flex-col'>
                             <Optimization text='Keep Original Files' />
                             <Optimization text='Enable MP4 Fallback' />
-                            <hr className='my-2 col-span-3 border-gray-600 border-t-[1px]' />
+                            <hr className='my-2 col-span-2 lg:col-span-3 border-gray-600 border-t-[1px]' />
                             <Optimization text='CDN Token Authentication' />
                             <Optimization text='Block Direct URL File Access' />
                             <Optimization text='Embed View Token Authentication' />
@@ -82,26 +93,26 @@ const Settings = () => {
                             <h1 className='font-[700] text-lg text-white'>Blocked & Allowed Domains</h1>
                             <MdKeyboardArrowRight className='text-white' size={25} />
                         </div>
-                        <div className='flex justify-between m-2'>
-                            <h1>Blocked Domains</h1>
-                            <div className='bg-[#EDD038] h-9 w-9'>
+                        <div className='sm:grid sm:grid-cols-2 lg:flex lg:flex-col relative my-4'>
+                            <div>
+                                <h1 className='font-[700] m-2'>Blocked Domains</h1>
+                                <p className='text-xs ml-2 mr-4 text-[#787C87]'>
+                                    The list of domains that will be blocked from accessing the videos.
+                                    <br />
+                                    Any domain not on the list will be allowed to play the videos.</p>
+                                <AddButton />
+                            </div>
+                            <div>
+                                <h1 className='font-[700] m-2'>Blocked Domains</h1>
+                                <p className='text-xs ml-2 mr-4 text-[#787C87]'>
+                                    The list of domains that are allowed to access the videos. <br />
+                                    If no hostnames are listed all requests will be allowed,
+                                </p>
+                                <AddButton />
+                            </div>
+                            <div className='bg-[#EDD038] h-9 w-9 absolute top-0 right-0 m-2'>
                             </div>
                         </div>
-                        <div>
-                            <p className='text-xs ml-2 mr-4 text-[#787C87]'>
-                                The list of domains that will be blocked from accessing the videos.
-                                <br />
-                                Any domain not on the list will be allowed to play the videos.</p>
-                        </div>
-                        <AddButton />
-                        <div>
-                            <h1 className='font-[700] m-2'>Blocked Domains</h1>
-                            <p className='text-xs ml-2 mr-4 text-[#787C87]'>
-                                The list of domains that are allowed to access the videos. <br />
-                                If no hostnames are listed all requests will be allowed,
-                            </p>
-                        </div>
-                        <AddButton />
                     </div>
                     {/* Advertisement Options */}
                     <div>
@@ -109,27 +120,27 @@ const Settings = () => {
                             <h1 className='font-[700] text-lg text-white'>Advertisement Options</h1>
                             <MdKeyboardArrowRight className='text-white' size={25} />
                         </div>
-                        <div className='my-4 px-2'>
-                            <div className='grid grid-cols-2 items-center'>
-                                <h1 className='font-bold'>VAST tag URL</h1>
-                                <div className='flex justify-around items-center'>
+
+                        <div className='sm:grid sm:grid-cols-2 relative my-4 lg:flex lg:flex-col'>
+                            <div className='flex flex-col px-2 col-span-1'>
+                                <div className='flex items-center gap-3'>
+                                    <h1 className='font-bold'>VAST tag URL</h1>
                                     <CgDanger />
-                                    <div className='bg-[#EDD038] h-9 w-9'>
-                                    </div>
                                 </div>
+                                <SaveButton placeholder={'Enter VAST tag URL here'} />
+                                <p className='text-xs text-[#787C87]'>to automatically display VAST based ads in your videos.</p>
+                            </div>
+
+                            <div className='flex flex-col justify-between mt-4 px-2 col-span-1'>
+                                <div className='flex items-center gap-3'>
+                                    <h1 className='font-bold'>VI.AI publisher ID</h1> <CgDanger size={15} />
+                                </div>
+                                <SaveButton placeholder={'Enter VI.AI publisher id here'} />
+                            </div>
+                            <div className='bg-[#EDD038] h-9 w-9 absolute right-0 top-0 m-2'>
                             </div>
                         </div>
-                        <SaveButton placeholder={'Enter VAST tag URL here'} />
-                        <div className='mx-2'>
-                            <p className='text-xs text-[#787C87]'>to automatically display VAST based ads in your videos.</p>
-                        </div>
-                        <div className='flex justify-between mt-4 px-2'>
-                            <h1 className='font-bold'>VI.AI publisher ID</h1>
-                            <div className='flex justify-center m-auto'>
-                                <CgDanger size={15} />
-                            </div>
-                        </div>
-                        <SaveButton placeholder={'Enter VI.AI publisher id here'} />
+
                     </div>
                     {/* Add Watermark */}
                     <div className='mt-4'>
@@ -175,20 +186,20 @@ const Settings = () => {
                         </div>
                         <div className='p-2'>
                             <div className='flex'>
-                                <div className='mb-2'>
+                                <div className='m-2 w-[80%] sm:w-[60%]'>
                                     <div className='flex justify-between relative mb-2'>
                                         <h1>yousaf@gmail.com</h1>
                                         <h1>xxxxxx</h1>
                                         <BiEditAlt className='bg-[#EDF5FF]' size={25} />
-                                        <RiDeleteBin5Line className='items-center absolute -right-10 cursor-pointer' size={25} />
-                                        <h1 className='font-[700] text-xs absolute -right-24'>Primary <br />Account</h1>
+                                        <RiDeleteBin5Line className='items-center absolute right-16 sm:-right-10 top-[148px] sm:top-0 cursor-pointer' size={25} />
+                                        <h1 className='font-[700] text-xs absolute right-0 sm:-right-24 top-[148px] sm:top-0'>Primary <br />Account</h1>
                                     </div>
-                                    <div className='flex justify-between gap-1 relative'>
+                                    <div className='flex flex-col sm:flex-row justify-between gap-1 relative'>
                                         <Input name={''} placeholder={'Enter email address'} type={'text'} onChange={handleChange} id={''} value={''} />
                                         <Input name={''} placeholder={'Enter password'} type={'text'} onChange={handleChange} id={''} value={''} />
-                                        <RiDeleteBin5Line className='items-center absolute -right-10 top-3 cursor-pointer' size={25} />
+                                        <RiDeleteBin5Line className='items-center absolute -right-10 sm:top-3 top-[68px] cursor-pointer' size={25} />
                                     </div>
-                                    <div className='flex justify-end'>
+                                    <div className='flex justify-start sm:justify-end'>
                                         <button className='px-4 py-2 text-[#6075DA] bg-[#EDF5FF] font-[900] rounded'>+ Add more</button>
                                     </div>
                                 </div>
@@ -242,32 +253,32 @@ const Settings = () => {
                             <h1 className='font-[700] text-lg'>Autoresponder Connections</h1>
                             <MdKeyboardArrowRight size={25} />
                         </div>
-                        <div className='flex justify-between py-4 px-4'>
-                            <div className="w-[226px] h-[116px] bg-[#EBEBEB] border-[2px] border-[#323232] border-dashed flex justify-center">
-                                <div className='flex flex-col justify-center'>
-                                    <p className='flex justify-center text-center'><BsFillPlusCircleFill size={30} /></p>
+                        <div className='flex flex-col justify-center sm:justify-start items-center sm:items-start gap-4 py-4 px-4 relative'>
+                            <div className="w-[80%] sm:w-[40%] h-[116px] bg-[#EBEBEB] border-[2px] border-[#323232] border-dashed flex justify-center">
+                                <div className='flex flex-col justify-center items-center'>
+                                    <BsFillPlusCircleFill size={30} />
                                     <p className="text-xs text-center">Add new autoresponder connection</p>
                                 </div>
                             </div>
-                            <div className='bg-[#EDD038] h-9 w-9 m-auto'>
-                            </div>
-                        </div>
-                        <div className='px-4'>
-                            <h1 className='text-sm font-bold'>Active Connections</h1>
-                            <div className='h-116px w-[226px] border'>
-                                <div className="h-[58px] bg-[#2C62DF] flex justify-center">
-                                    <div className='flex flex-col justify-center'>
+
+                            <div className='flex justify-center w-[80%] sm:w-[40%] flex-col'>
+                                <h1 className='text-sm font-bold'>Active Connections</h1>
+                                <div className='h-116px border'>
+                                    <div className="h-[58px] bg-[#2C62DF] flex justify-center items-center">
                                         <Image src='/stroke.png' height='53px' width='36px' alt='stroke' />
                                     </div>
-                                </div>
-                                <div className='flex justify-between py-2'>
-                                    <h1 className='text-xs mx-2 font-bold'>ActiveCampaign</h1>
-                                    <div className='flex justify-between gap-2 items-center'>
-                                        <VscArrowSwap />
-                                        <BsPencilFill />
-                                        <RiDeleteBin5Line />
+                                    <div className='flex justify-between py-2'>
+                                        <h1 className='text-xs mx-2 font-bold'>ActiveCampaign</h1>
+                                        <div className='flex justify-between gap-2 items-center'>
+                                            <VscArrowSwap />
+                                            <BsPencilFill />
+                                            <RiDeleteBin5Line />
+                                        </div>
                                     </div>
                                 </div>
+                            </div>
+
+                            <div className='bg-[#EDD038] h-9 w-9 absolute top-0 right-0 m-2'>
                             </div>
                         </div>
                     </div>
@@ -277,30 +288,30 @@ const Settings = () => {
                             <h1 className='font-[700] text-lg'> White label for agency</h1>
                             <MdKeyboardArrowRight size={25} />
                         </div>
-                        <div className='flex gap-2 my-4 px-4'>
-                            <div className="w-[226px] h-[58px] bg-[#EBEBEB] border-[2px] border-[#323232] border-dashed flex justify-center">
+                        <div className='flex flex-col sm:flex-row justify-center items-center gap-2 my-4 px-4 md:mx-16 relative'>
+                            <div className="w-full sm:w-[226px] h-[58px] bg-[#EBEBEB] border-[2px] border-[#323232] border-dashed flex justify-center">
                                 <div className='flex flex-row justify-center m-auto items-center gap-2'>
                                     <p className='text-center'><BsFillPlusCircleFill size={30} /></p>
                                     <p className="text-xs text-center">Upload Logo</p>
                                 </div>
                             </div>
-                            <div className="w-[226px] h-[58px] bg-[#EBEBEB] border-[2px] border-[#323232] border-dashed flex justify-center">
+                            <div className="w-full sm:w-[226px] h-[58px] bg-[#EBEBEB] border-[2px] border-[#323232] border-dashed flex justify-center">
                                 <div className='flex flex-row justify-center m-auto items-center gap-2'>
                                     <p className='text-center'><BsFillPlusCircleFill size={30} /></p>
-                                    <p className="text-xs text-center">Upload Logo</p>
+                                    <p className="text-xs text-center">Add Plan</p>
                                 </div>
                             </div>
-                            <div className="w-[226px] h-[58px] bg-[#EBEBEB] border-[2px] border-[#323232] border-dashed flex justify-center">
+                            <div className="w-full sm:w-[226px] h-[58px] bg-[#EBEBEB] border-[2px] border-[#323232] border-dashed flex justify-center">
                                 <div className='flex flex-row justify-center m-auto items-center gap-2'>
                                     <p className='text-center'><BsFillPlusCircleFill size={30} /></p>
-                                    <p className="text-xs text-center">Upload Logo</p>
+                                    <p className="text-xs text-center">Add User</p>
                                 </div>
                             </div>
-                            <div className='bg-[#EDD038] h-9 w-9 m-auto'>
+                            <div className='bg-[#EDD038] h-9 w-9 absolute top-0 right-0 m-2'>
 
                             </div>
                         </div>
-                        <div className='flex justify-between gap-2 px-4'>
+                        <div className='flex flex-col sm:flex-row justify-between gap-2 px-4 my-8'>
                             <div className='border border-sky-600 px-3 py-2 flex justify-between items-center w-full'>
                                 <h1>Interface - 1 </h1><AiFillEye />
                             </div>
@@ -311,12 +322,12 @@ const Settings = () => {
                                 <h1>Interface - 3 </h1><AiFillEye />
                             </div>
                         </div>
-                        <div className='px-4'>
+                        <div className='px-4 flex flex-col gap-2 my-8 w-full'>
                             <div className=''>
                                 <h1 className='font-bold text-md'>Active Pricing Plans</h1>
-                                <hr className='w-40 text-black' />
+                                <hr className='w-[30%] border-t-black border-t-2 mt-2' />
                             </div>
-                            <div className='flex gap-2 items-center'>
+                            <div className='flex flex-row  w-full gap-2 items-center'>
                                 <h1 className='text-[#C5C7CD]'>Gold plan (100GB) - <span className='text-[#4954CB]'>$59/onetime</span></h1>
                                 <Toggle />
                                 <BsPencilFill size={20} />
@@ -329,22 +340,22 @@ const Settings = () => {
                             <BsFillStarFill size={75} />
                             <div className='bg-black h-2 bg-gradient-to-r from-black to-white rounded w-full' />
                         </div>
-                        <div className='px-4'>
+                        <div className='px-4 flex flex-col my-8'>
                             <div>
                                 <h1 className='font-bold text-md'>Active Users</h1>
-                                <hr className='w-40 text-black' />
+                                <hr className='w-[30%] border-t-black border-t-2 mt-2' />
                             </div>
-                            <div className='flex gap-2 items-center'>
-                                <div className='flex gap-2 items-center'>
+                            <div className='flex flex-col sm:flex-row my-2 gap-2 items-center'>
+                                <div className='flex gap-2 items-center w-full'>
                                     <Input name={''} placeholder={'Enter video ID to find owner'} type={'text'} onChange={handleChange} id={''} value={''} />
                                     <button className='px-4 py-2 text-[#6075DA] bg-[#EDF5FF] font-[700] rounded'>Search</button>
                                 </div>
-                                <div className='flex gap-2 items-center'>
+                                <div className='flex gap-2 items-center w-full'>
                                     <Input name={''} placeholder={'Search users by name or email'} type={'text'} onChange={handleChange} id={''} value={''} />
                                     <button className='px-4 py-2 text-[#6075DA] bg-[#EDF5FF] font-[700] rounded'>Search</button>
                                 </div>
-                                <div className='items-center'>
-                                    <button className='px-4 py-2 text-[#6075DA] bg-[#EDF5FF] font-[700] rounded'>Download List</button>
+                                <div className='items-center w-full'>
+                                    <button className='px-4 py-2 w-full text-[#6075DA] bg-[#EDF5FF] font-[700] rounded'>Download</button>
                                 </div>
                             </div>
                             <ActiveUsers />
@@ -353,90 +364,92 @@ const Settings = () => {
                                 <BsFillStarFill size={75} />
                                 <div className='bg-black h-2 bg-gradient-to-r from-black to-white rounded w-full' />
                             </div>
-                            <div className='grid gap-3'>
-                                <div className='grid grid-cols-3 gap-4 items-center'>
-                                    <h1 className='col-span-1 font-bold'>Login URL for agency customers</h1>
+                            <div className='flex flex-col gap-3'>
+                                <div className='flex flex-col sm:flex sm:flex-row gap-4 items-center'>
+                                    <h1 className='sm:col-span-1 font-bold'>Login URL for agency customers</h1>
                                     <h1 className='px-4 py-2 bg-[#F4F7F9] text-[#787C87] rounded'>https://CustomerDomain.com/login</h1>
                                 </div>
-                                <div className='grid grid-cols-3 gap-4 items-center'>
-                                    <h1 className='col-span-1 font-bold'>Logout URL for agency customers</h1>
+                                <div className='flex flex-col sm:flex sm:flex-row gap-4 items-center'>
+                                    <h1 className='sm:col-span-1 font-bold'>Logout URL for agency customers</h1>
                                     <h1 className='px-4 py-2 bg-[#F4F7F9] text-[#787C87] rounded'>https://CustomerDomain.com/login</h1>
                                 </div>
                             </div>
-                            <div className='mt-8'>
+                            <div className='flex flex-col mt-8'>
                                 <div>
                                     <h1 className='font-bold text-md'>Add User</h1>
-                                    <hr className='w-40 text-black' />
+                                    <hr className='w-[30%] border-t-black border-t-2 mt-2' />
                                 </div>
-                                <form className='grid grid-cols-3'>
-                                    <div className='col-span-2'>
-                                        <div className='flex gap-2 justify-between'>
+                                <form className='grid grid-cols-3 relative'>
+                                    <div className='col-span-3 w-[90%]'>
+                                        <div className='flex sm:flex-row flex-col gap-2 justify-between'>
                                             <Input name={''} placeholder={'Enter email address'} type={'text'} onChange={handleChange} id={''} value={''} />
                                             <Input name={''} placeholder={'Enter password'} type={'text'} onChange={handleChange} id={''} value={''} />
                                         </div>
-                                        <div className='flex gap-2 justify-between'>
+                                        <div className='flex sm:flex-row flex-col gap-2 justify-between'>
                                             <Select name={'Storage quota'} />
                                             <Select name={'Free Trial(7 days)'} />
                                         </div>
-                                        <div className='flex gap-2 justify-between'>
+                                        <div className='flex sm:flex-row flex-col gap-2 justify-between'>
                                             <Input name={''} placeholder={'Enter price     ($)'} type={'text'} onChange={handleChange} id={''} value={''} />
                                             <Select name={'Every month/ Onetime'} />
                                         </div>
-                                        <div className='flex justify-end'>
+                                        <div className='flex sm:flex-row flex-col justify-end'>
                                             <button className='px-4 py-2 text-[#6075DA] bg-[#EDF5FF] font-[700] rounded'>Add</button>
                                         </div>
                                     </div>
-                                    <div className='span-col-1'>
-                                        <RiDeleteBin5Line className='mt-3 ml-3 cursor-pointer' size={25} />
-                                    </div>
+                                    <RiDeleteBin5Line className='mt-3 ml-3 cursor-pointer absolute top-0 right-0 m-2' size={25} />
                                 </form>
                             </div>
-                            <div>
+                            <div className='flex flex-col'>
                                 <div>
                                     <h1 className='font-bold text-md'>Add Pricing Plan</h1>
-                                    <hr className='w-40 text-black' />
+                                    <hr className='w-[30%] border-t-black border-t-2 mt-2' />
                                 </div>
-                                <form className='grid grid-cols-3'>
-                                    <div className='col-span-2'>
-                                        <div className='flex gap-2 justify-between'>
+                                <form className='grid grid-cols-3 relative'>
+                                    <div className='col-span-3 w-[90%] sm:w-[50%]'>
+                                        <div className='flex sm:flex-row flex-col gap-2'>
                                             <Input name={''} placeholder={'Enter plan name'} type={'text'} onChange={handleChange} id={''} value={''} />
                                         </div>
-                                        <div className='grid grid-cols-3 gap-2 justify-between'>
-                                            <div className='col-span-1'><Input name={''} placeholder={'Enter price $'} type={'text'} onChange={handleChange} id={''} value={''} /></div>
-                                            <div className='col-span-2'><Select name={'Every month / OneTime'} /></div>
+                                        <div className='sm:flex-row flex-col gap-2'>
+                                            <div className='col-span-1'>
+                                                <Input name={''} placeholder={'Enter price $'} type={'text'} onChange={handleChange} id={''} value={''} />
+                                            </div>
+                                            <div className='col-span-2'>
+                                                <Select name={'Every month / OneTime'} />
+                                            </div>
                                         </div>
-                                        <div className='flex gap-2 justify-between'>
+                                        <div className='flex sm:flex-row flex-col gap-2'>
                                             <Input name={''} placeholder={'Enter price     ($)'} type={'text'} onChange={handleChange} id={''} value={''} />
                                         </div>
-                                        <div className='flex gap-2 justify-between'>
+                                        <div className='flex sm:flex-row flex-col gap-2'>
                                             <Select name={'Free Trial (7 Days)    YES/NO'} />
                                         </div>
-                                        <div className='flex justify-end'>
+                                        <div className='flex sm:flex-row flex-col justify-end'>
                                             <button className='px-6 py-2 text-[#6075DA] bg-[#EDF5FF] font-[700] rounded'>Add</button>
                                         </div>
                                     </div>
-                                    <div className='span-col-1'>
-                                        <BiCamera className='mt-3 ml-3 cursor-pointer' size={25} />
-                                    </div>
+
+                                    <BiCamera className='mt-3 ml-3 cursor-pointer absolute top-0 right-0 m-2' size={25} />
+
                                 </form>
                             </div>
-                            <div>
+                            <div className='flex flex-col'>
                                 <div>
                                     <h1 className='font-bold text-md'>Setup Payment Gateways</h1>
-                                    <hr className='w-40 text-black' />
+                                    <hr className='w-[30%] border-t-black border-t-2 mt-2' />
                                 </div>
                                 <form className='grid grid-cols-3' action="">
-                                    <div className='col-span-2'>
+                                    <div className='col-span-3 sm:col-span-2'>
                                         <Input name={''} placeholder={'Enter PayPal email to enable PayPal on checkout page'} type={'text'} onChange={handleChange} id={''} value={''} />
                                         <Input name={''} placeholder={'Enter Stripe Secret Key to enable Stripe on checkout page'} type={'text'} onChange={handleChange} id={''} value={''} />
                                         <Input name={''} placeholder={'Enter 2checkout key to enable 2Checkout on checkout page'} type={'text'} onChange={handleChange} id={''} value={''} />
                                     </div>
-                                    <div className='col-span-2 flex justify-between items-center'>
-                                        <button className='px-6 py-2 text-[#6075DA] bg-[#EDF5FF] font-[700] rounded'>Save</button>
-                                        <div className='flex gap-1 items-center'>
+                                    <div className='flex flex-col-reverse col-span-3 sm:col-span-2 sm:flex justify-between items-center gap-4'>
+                                        <div className='flex gap-4 items-center w-full'>
                                             <input type="checkbox" className="checkbox w-4 h-4 cursor-pointer" />
                                             <h1>Enable sandbox/testing node</h1>
                                         </div>
+                                        <button className='px-6 py-2 text-[#6075DA] w-full bg-[#EDF5FF] font-[700] rounded'>Save</button>
                                     </div>
                                 </form>
                             </div>
@@ -463,19 +476,21 @@ const Settings = () => {
                                 <h1 className='text-[#6089DA] font-bold'>Gold Plan</h1>
                             </div>
                         </div>
-                        <div className='grid grid-cols-2 gap-2 px-4'>
+                        <div className='grid grid-cols-2 gap-2 px-4 relative'>
                             <div className='col-span-1'>
                                 <Select name={'Switch your plan'} />
-                                <p className='text-xs text-[#6997DC]'>If you will downgrade your plan, then all latest videos exceeding the storage
-                                    limit of your new plan will automatically get removed. So remove un-wanted
-                                    videos before changing the plan to avoid any inconvenience.</p>
                             </div>
                             <div className='col-span-1'>
-                                <button className='px-6 py-2 text-white bg-[#1E1E1F] font-[600] rounded mt-1'>Change</button>
+                                <button className='px-6 py-2 text-white w-full sm:w-auto bg-[#1E1E1F] font-[600] rounded mt-1'>Change</button>
                             </div>
+                            <p className='text-xs text-[#6997DC] sm:col-span-1 col-span-2'>If you will downgrade your plan, then all latest videos exceeding the storage
+                                limit of your new plan will automatically get removed. So remove un-wanted
+                                videos before changing the plan to avoid any inconvenience.
+                            </p>
                         </div>
+
                         <div className='grid grid-cols-3 my-4 px-4'>
-                            <div className='border p-2 col-span-2 flex justify-between'>
+                            <div className='border p-2 col-span-3 sm:col-span-2 flex justify-between'>
                                 <div className='items-center'>
                                     <h1 className=''>Payment</h1>
                                     <div className='my-4'>
@@ -490,7 +505,7 @@ const Settings = () => {
                             </div>
                         </div>
                         <div className='grid grid-cols-2 px-4'>
-                            <div className='col-span-1'>
+                            <div className='col-span-2 sm:col-span-1'>
                                 <h1 className='font-bold'>Active Pricing Plan & Addons:</h1>
                                 <div className='flex justify-between'>
                                     <h1>- Gold plan @ $30/month</h1>
@@ -507,17 +522,17 @@ const Settings = () => {
                             </div>
                         </div>
                         <div className='grid grid-cols-2 mt-8 px-4'>
-                            <div className='col-span-1'>
+                            <div className='col-span-2 sm:col-span-1'>
                                 <h1 className='font-bold'>Total payment:</h1>
                                 <h1>$94.50/Month <span className='text-[#6089DA]'>(Addons payment is included in this amount)</span></h1>
                                 <h1>Your plan will renew on Jan.16, 2022.</h1>
                             </div>
                         </div>
                         <div className='grid grid-cols-3 px-4'>
-                            <hr className='my-8 col-span-2 border-gray-600 border-t-[2px]' />
+                            <hr className='my-8 col-span-3 sm:col-span-2 border-gray-600 border-t-[2px]' />
                         </div>
                         <div className='grid grid-cols-3 px-4'>
-                            <div className='col-span-2 flex items-start gap-3'>
+                            <div className='col-span-3 sm:col-span-2 flex flex-col sm:flex-row items-start gap-3'>
                                 <h1 className='whitespace-nowrap font-bold items-center mt-3'>API KEY</h1>
                                 <div>
                                     <div className='border border-black bg-[#F4F7F9] rounded px-3 py-2 flex justify-between items-center w-full'>
@@ -527,12 +542,12 @@ const Settings = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className='grid grid-cols-3'>
-                            <hr className='my-8 col-span-2 border-gray-600 border-t-[2px]' />
+                        <div className='grid grid-cols-3 px-4'>
+                            <hr className='my-8 col-span-3 sm:col-span-2 border-gray-600 border-t-[2px]' />
                         </div>
                         <div className='grid grid-cols-3 mb-8 px-4'>
-                            <div className='flex col-span-2 items-start gap-4'>
-                                <button className='px-6 py-2 text-white bg-[#1E1E1F] font-[600] rounded mt-1 items-center whitespace-nowrap'>Delete account permanently</button>
+                            <div className='flex flex-col col-span-3 sm:col-span-2 items-center sm:items-start gap-4'>
+                                <button className='px-6 py-2 w-full sm:w-auto text-white bg-[#1E1E1F] font-[600] rounded mt-1 items-center whitespace-nowrap'>Delete account permanently</button>
                                 <p className='text-sm my-2'><span className='text-[#EE4A4F] font-bold'>Warning message:</span> I understand that all of my videos will be permanently removed. (show this as a popup)</p>
                             </div>
                         </div>

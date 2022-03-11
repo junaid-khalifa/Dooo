@@ -3,6 +3,7 @@ import Link from "next/link"
 import { RiPagesLine } from "react-icons/ri"
 import TableData from "../Videos/TableData"
 import Modal from './Modal'
+import Image from 'next/image'
 
 const CallToActions = () => {
   const [hide, setHide] = useState(true)
@@ -14,11 +15,29 @@ const CallToActions = () => {
 
   return (
     <div>
-      <div className="rounded-t mb-0 px-4 py-3 border-0">
-        <div className="flex gap-2 items-center">
+      <div className="rounded-t mb-0 px-4 py-3 border-0 relative">
+        {/* Nav */}
+        <div className='flex flex-row items-center gap-1 float-left absolute top-4 left-4 sm:hidden'>
+          <div className='flex sm:hidden'>
+            <Image src='/home-bar.png' alt='bars' height='16px' width='21px' />
+          </div>
+          <div className='flex sm:hidden'>
+            <Image src='/Logo.png' className='object-contain' height='26px' width='26px' alt='dooo' />
+          </div>
+        </div >
+
+        <div className="flex gap-1 sm:gap-2 items-center ml-16 sm:ml-0">
           <div className="cursor-pointer">
             <Link href='/manage-videos' passHref>
-              <h1 className="font-semibold text-lg text-black">Manage Videos</h1>
+              <h1 className="font-semibold text-xs sm:text-lg text-black">Manage Videos</h1>
+            </Link>
+          </div>
+          <div className="">
+            <h3 className="font-bold text-xs sm:text-lg text-sky-600">|</h3>
+          </div>
+          <div className="cursor-pointer">
+            <Link href='/playlist' passHref>
+              <h1 className="font-semibold text-xs sm:text-lg text-black">Manage Playlist</h1>
             </Link>
           </div>
           <div className="">
@@ -26,15 +45,7 @@ const CallToActions = () => {
           </div>
           <div className="cursor-pointer">
             <Link href='/playlist' passHref>
-              <h1 className="font-semibold text-lg text-black">Manage Playlist</h1>
-            </Link>
-          </div>
-          <div className="">
-            <h3 className="font-bold text-lg text-sky-600">|</h3>
-          </div>
-          <div className="cursor-pointer">
-            <Link href='/playlist' passHref>
-              <h1 className="font-semibold text-lg text-black">Manage Popups</h1>
+              <h1 className="font-semibold text-xs sm:text-lg text-black">Manage Popups</h1>
             </Link>
           </div>
         </div>
@@ -43,16 +54,20 @@ const CallToActions = () => {
       <section className="relative py-12 bg-blueGray-50">
         <div className="w-full mb-4 px-4">
           <div className="relative flex flex-col min-w-0 break-words w-full mb-6 rounded">
-            <div className="flex justify-end rounded-t mb-0 px-4 py-3 border-0">
-              <div className="gap-2 items-center">
+
+            <div className="flex justify-center sm:justify-end rounded-t mb-0 px-4 py-3 border-0">
+              <div className="flex flex-col gap-2 items-center">
                 <div className="py-2">
                   <button className="bg-black text-white px-3 py-2 rounded">Download collected emails</button>
                 </div>
                 <div className="py-2">
-                  <button onClick={() => modalHandler()} className="flex items-center"><RiPagesLine size={30} />Create New CTA</button>
+                  <button onClick={() => modalHandler()} className="flex items-center">
+                    <RiPagesLine size={30} />Create New CTA
+                  </button>
                 </div>
               </div>
             </div>
+
             <div className="block w-full overflow-x-auto ">
               <table className="items-center w-full bg-transparent border-collapse">
                 <thead>

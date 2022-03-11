@@ -8,7 +8,7 @@ const Category = () => {
 
     return (
         <div>
-            <div onClick={() => setIsList(!isList)} className="w-64 p-4 shadow rounded bg-white border-[1px] border-[#787C87] text-sm font-medium leading-none text-gray-800 flex items-center justify-between cursor-pointer">
+            <div onClick={() => setIsList(!isList)} className="p-4 shadow rounded bg-white border-[1px] border-[#787C87] text-sm font-medium leading-none text-gray-800 flex flex-grow items-center justify-between cursor-pointer">
                 Add to category
                 {isList ? (
                     <div>
@@ -25,7 +25,7 @@ const Category = () => {
                 )}
             </div>
             {isList && (
-                <div className="w-64 h-72 absolute overflow-auto mt-2 p-4 bg-white shadow rounded">
+                <div className="h-72 absolute overflow-auto mt-2 p-4 bg-white shadow rounded">
                     <DropdownItem category={"Category 1"} />
                     <DropdownItem category={"Category 2"} />
                     <DropdownItem category={"Category 3"} />

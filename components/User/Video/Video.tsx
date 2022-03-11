@@ -24,42 +24,50 @@ const Video = () => {
     }
 
     return (
-        <div className="mt-8">
+        <div className="mt-16">
+            {/* Nav */}
+            <div className='flex flex-row items-center gap-1 float-left absolute top-5 left-0 sm:hidden mx-8'>
+                <div className='flex sm:hidden'>
+                    <Image src='/home-bar.png' alt='bars' height='16px' width='21px' />
+                </div>
+                <div className='flex sm:hidden'>
+                    <Image src='/Logo.png' className='object-contain' height='26px' width='26px' alt='dooo' />
+                </div>
+            </div >
+
             {/* Header --> Loader and camcel button */}
-            <div className="grid justify-items-stretch">
-                <div className="flex items-center justify-around">
-                    <div className="w-[35%] rounded-full justify-self-center items-center">
+            <div className="grid justify-items-stretch mx-8">
+                <div className="flex sm:items-center flex-col sm:flex-row sm:justify-around">
+                    <div className="w-full sm:w-[35%] rounded-full justify-self-center items-center">
                         <div className=" bg-[#000000] text-xs font-medium text-white text-center p-2 leading-none rounded-full">Uploading 45%...30 seconds left!</div>
-
                     </div>
-
-                    <div className="justify-self-start">
-                        <button className="rounded-full border-[1px] border-[#787C87] text-[#1E1E1F] py-1 px-6 my-3 bg-gradient-to-b from-[#F7F7F7] to-[#D6D7D9]">Cancel</button>
+                    <div className="sm:justify-self-start">
+                        <button className="rounded-full w-full sm:w-auto border-[1px] border-[#787C87] text-[#1E1E1F] py-1 px-6 my-3 bg-gradient-to-b from-[#F7F7F7] to-[#D6D7D9]">Cancel</button>
                     </div>
                 </div>
             </div>
 
-            <div className="grid grid-cols-2 divide-x-2 divide-black mt-4">
+            <div className="lg:grid lg:grid-cols-2 lg:divide-x-2 divide-black mt-4">
                 {/* COLUMN 1 --> Left */}
-                <div className="col-span-1">
+                <div className="col-span-1 mb-8 lg:mb-0">
                     <div className="mx-8">
                         <div className="">
                             <Input name={""} placeholder={"Enter video title here"} type={"text"} onChange={handleChange} id={""} value={""} />
                         </div>
-                        <div className="flex flex-row gap-2 my-2">
-                            <div className="flex justify-center items-center w-24 flex-grow flex-col h-[66px] border-[1px] border-dashed">
+                        <div className="flex flex-wrap justify-center sm:flex-nowrap gap-2 my-2">
+                            <div className="flex justify-center items-center w-24 sm:flex-grow flex-col h-[66px] border-[1px] border-dashed">
                                 <p className="text-center">
                                     <Image src="/thumbnail-vector.png" height='18px' width='18px' alt='thumbnail' />
                                 </p>
                                 <p className="text-xs text-center">Upload thumbnail</p>
                             </div>
-                            <div className="flex flex-grow w-[120px] h-[66px] relative">
+                            <div className="flex sm:flex-grow w-[120px] h-[66px] relative">
                                 <Image src='/space.png' className="absolute object-fill" alt="space" layout="fill" />
                             </div>
-                            <div className="flex flex-grow w-[120px] h-[66px] relative">
+                            <div className="flex sm:flex-grow w-[120px] h-[66px] relative">
                                 <Image src='/1-rocket.png' className="absolute object-fill" alt="rocket" layout="fill" />
                             </div>
-                            <div className="flex justify-center items-center w-24 flex-grow h-[66px] border-[1px] border-dashed flex-col">
+                            <div className="flex justify-center items-center w-24 sm:flex-grow h-[66px] border-[1px] border-dashed flex-col">
                                 <p className="text-center">
                                     <Image className="items-center" src="/thumbnail-vector.png" height='18px' width='18px' alt='thumbnail' />
                                 </p>
@@ -70,7 +78,7 @@ const Video = () => {
                         <div>
                             <Input name={""} placeholder={"Enter password to protect the video(s) (Optional)"} type={"password"} onChange={handleChange} id={""} value={""} />
                         </div>
-                        <div className="flex flex-row justify-between gap-2">
+                        <div className="flex justify-between gap-2">
                             <Category />
                             <Playlist />
                         </div>
@@ -98,14 +106,17 @@ const Video = () => {
                     </div>
                 </div>
                 {/* COLUMN 2 ---> Right */}
-                <div className="col-span-1">
+                <div className="col-span-1 mt-16 lg:mt-0">
                     <div className="mx-8">
-                        <div className="bg-[#F8F8F8]">
-                            <video height='270px' width='482px' src="" controls></video>
-                            <div className="flex justify-between pt-2 px-2">
-                                <h1>Video link</h1>
-                                <MdOutlineContentCopy />
+                        <div className="">
+                            <div className="flex justify-center flex-col items-center bg-[#F8F8F8]">
+                                <video className="flex flex-grow w-96 h-auto" src="" controls></video>
+                                <div className="flex justify-between items-center pt-2 px-2">
+                                    <h1>Video link</h1>
+                                    <MdOutlineContentCopy />
+                                </div>
                             </div>
+
                             <a href="" className="px-2 text-sky-500 underline">
                                 https://dooo/md/watch
                             </a>

@@ -4,10 +4,10 @@ import Settings from "../components/User/Settings/Settings"
 const settings = () => {
     return (
         <div className="flex flex-cols-2">
-            <div className="w-[4%] border-r-[1.5px] border-black">
+            <div className="sm:w-[4%] sm:border-r-[1.5px] sm:border-black">
                 <Sidebar />
             </div>
-            <div className="w-[96%]">
+            <div className="sm:w-[96%] w-full">
                 <Settings />
             </div>
         </div>

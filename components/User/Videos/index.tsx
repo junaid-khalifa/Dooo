@@ -5,14 +5,27 @@ import Search from './Inputs/Search'
 import TableData from './TableData'
 import EmbedButton from './Inputs/EmbedButton'
 import { useRouter } from 'next/router'
+import Image from 'next/image'
 
 const VideosList = () => {
     const router = useRouter()
 
     return (
-        <>
-            <div className="rounded-t mb-0 px-4 py-3 border-0">
-                <div className="flex gap-2 items-center">
+        <div className='relative'>
+
+
+            <div className="rounded-t mb-0 px-4 py-3 border-0 relative">
+                {/* Nav */}
+                <div className='flex flex-row items-center gap-1 float-left absolute top-4 left-4 sm:hidden'>
+                    <div className='flex sm:hidden'>
+                        <Image src='/home-bar.png' alt='bars' height='16px' width='21px' />
+                    </div>
+                    <div className='flex sm:hidden'>
+                        <Image src='/Logo.png' className='object-contain' height='26px' width='26px' alt='dooo' />
+                    </div>
+                </div >
+
+                <div className="flex ml-16 sm:ml-0 gap-2 items-center">
                     <div className="cursor-pointer">
                         <Link href='/manage-videos' passHref>
                             <h1 className="font-semibold text-lg text-black">Manage Videos</h1>
@@ -40,23 +53,23 @@ const VideosList = () => {
             <section className="relative py-12 bg-blueGray-50">
                 <div className="w-full mb-12 px-4">
                     <div className="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded">
-                        <div className="flex justify-between rounded-t mb-0 px-4 py-3 border-0">
-                            <div className="flex gap-2 items-center">
-                                <div className="">
+
+                        <div className="flex flex-col sm:flex-row justify-between rounded-t mb-0 px-4 py-3 border-0">
+                            <div className="flex flex-col md:flex-row gap-2 items-center">
+                                <div className="flex items-start justify-start w-full">
                                     <Search />
                                 </div>
-                                <div className=" ">
+                                <div className="flex flex-row gap-2 w-full">
                                     <Category />
-                                </div>
-                                <div className="">
                                     {router.pathname === '/playlist' && (<Playlist />)}
                                 </div>
-
                             </div>
-                            <div className=''>
+
+                            <div className='flex items-start w-full sm:w-auto sm:items-end sm:px-2 my-4 sm:my-0'>
                                 {router.pathname === '/playlist' && (<EmbedButton />)}
                             </div>
                         </div>
+
                         <div className="block w-full overflow-x-auto ">
                             <table className="items-center w-full bg-transparent border-collapse">
                                 <thead>
@@ -82,7 +95,7 @@ const VideosList = () => {
                 </div>
 
             </section>
-        </>
+        </div>
     )
 }
 
