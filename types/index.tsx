@@ -87,3 +87,7 @@ export interface SettingsOptionProp {
 export interface ControlOptionProp {
     label: string;
 }
+
+export interface SideNavProp {
+    stylevalue: string;
+}

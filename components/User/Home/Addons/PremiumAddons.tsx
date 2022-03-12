@@ -7,10 +7,10 @@ import { premiumAddons } from './addonfiles'
 const PremiumAddons = () => {
     let color = '900'
     return (
-        <div className='w-[95vw] float-right bg-[#FBF9F6]'>
+        <div className='flex justify-center flex-col items-center bg-[#FBF9F6]'>
             <h1 className='text-center text-2xl leading-9 font-[700] text-[#1E1E1F]'>Premium Addons</h1>
             <h1 className='text-center text-xl font-[600] leading-6 text-[#1E1E1F]'>Get powerful addons to boost experience</h1>
-            <div className='grid lg:grid-cols-2 gap-4 mx-6 my-6'>
+            <div className='grid lg:grid-cols-2 gap-4 mx-2 md:mx-6 my-6'>
                 {premiumAddons.map((element, index) => (
                     <Addon
                         key={index}

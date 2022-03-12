@@ -7,6 +7,7 @@ import { RiCodeBoxLine, RiDeleteBin6Line } from 'react-icons/ri'
 import { GiWorld } from 'react-icons/gi'
 import { TableProps } from '../../../types'
 import { useRouter } from 'next/router'
+import Toggle from '../Toggle'
 
 const TableData = (props: TableProps) => {
     const router = useRouter()
@@ -40,7 +41,7 @@ const TableData = (props: TableProps) => {
             </div>
             </td>
             <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-right">
-                toggle
+                <Toggle />
             </td>
         </tr>
     )

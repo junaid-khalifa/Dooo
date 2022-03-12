@@ -1,4 +1,4 @@
-import React, { ChangeEvent } from 'react'
+import React, { ChangeEvent, useState } from 'react'
 import { BiCamera, BiEditAlt } from 'react-icons/bi'
 import { BsCheckCircleFill, BsFillPlusCircleFill, BsFillStarFill, BsPencilFill } from 'react-icons/bs'
 import { MdKeyboardArrowRight } from 'react-icons/md'
@@ -19,8 +19,17 @@ import AddButton from './AddButton'
 import SaveButton from './SaveButton'
 import { ImUpload3 } from 'react-icons/im'
 import Zone from './Zone'
+import SideNav from '../SideNav'
+import Link from 'next/link'
 
 const Settings = () => {
+    const [nav, setNav] = useState(false)
+
+    function showSideNav() {
+        setNav(!nav)
+    }
+
+    const styleValue = nav ? 'none' : 'hidden'
 
     function handleChange(e: ChangeEvent<HTMLInputElement>): void {
         throw new Error('Function not implemented.')
@@ -28,18 +37,21 @@ const Settings = () => {
 
     return (
         <div className='mx-2 sm:mx-0 relative'>
+            <SideNav stylevalue={styleValue} />
             {/* Nav */}
             <div className='flex flex-row items-center gap-1 float-left absolute top-2 left-0 sm:hidden'>
-                <div className='flex sm:hidden'>
+                <div onClick={showSideNav} className='flex sm:hidden'>
                     <Image src='/home-bar.png' alt='bars' height='16px' width='21px' />
                 </div>
                 <div className='flex sm:hidden'>
-                    <Image src='/Logo.png' className='object-contain' height='26px' width='26px' alt='dooo' />
+                    <Link href='/home' passHref>
+                        <Image src='/Logo.png' className='object-contain' height='26px' width='26px' alt='dooo' />
+                    </Link>
                 </div>
             </div >
 
             {/* Header settings page */}
-            <div className='flex flex-col gap-4 justify-center items-center my-8'>
+            <div className='flex flex-col sm:flex-row gap-4 justify-center items-center my-8'>
                 <h1 className='flex justify-center text-2xl leading-9 m-auto text-[#1E1E1F] font-[700]'>Account Settings</h1>
                 <button className='px-8 bg-[#E1FFF2] w-full sm:w-auto text-center rounded py-2 text-[#31B37D] text-[900] mr-2'>SAVE</button>
             </div>
@@ -288,7 +300,7 @@ const Settings = () => {
                             <h1 className='font-[700] text-lg'> White label for agency</h1>
                             <MdKeyboardArrowRight size={25} />
                         </div>
-                        <div className='flex flex-col sm:flex-row justify-center items-center gap-2 my-4 px-4 md:mx-16 relative'>
+                        <div className='flex flex-col sm:flex-row justify-center sm:justify-between items-center sm:items-start gap-2 my-4 px-4 md:mx-4 relative'>
                             <div className="w-full sm:w-[226px] h-[58px] bg-[#EBEBEB] border-[2px] border-[#323232] border-dashed flex justify-center">
                                 <div className='flex flex-row justify-center m-auto items-center gap-2'>
                                     <p className='text-center'><BsFillPlusCircleFill size={30} /></p>

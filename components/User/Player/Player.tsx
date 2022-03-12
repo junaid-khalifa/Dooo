@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { FiUpload } from 'react-icons/fi'
 import { RiDeleteBin6Line } from 'react-icons/ri'
 import Dropdown from '../Dropdown/Dropdown'
@@ -10,22 +10,35 @@ import LogoPosition from '../Video/LogoPosition'
 import PutLogo from '../Video/PutLogo'
 import PlayerTheme from './PlayerTheme'
 import Image from 'next/image'
+import SideNav from '../SideNav'
+import Link from 'next/link'
 
 const Player = () => {
+    const [nav, setNav] = useState(false)
+
+    function showSideNav() {
+        setNav(!nav)
+    }
+
+    const styleValue = nav ? 'none' : 'hidden'
+
     return (
         <div className='relative'>
+            <SideNav stylevalue={styleValue} />
             {/* Nav */}
             <div className='flex flex-row items-center gap-1 absolute top-1 left-0 sm:hidden ml-2'>
-                <div className='flex sm:hidden'>
+                <div onClick={showSideNav} className='flex sm:hidden'>
                     <Image src='/home-bar.png' alt='bars' height='16px' width='21px' />
                 </div>
                 <div className='flex sm:hidden'>
-                    <Image src='/Logo.png' className='object-contain' height='26px' width='26px' alt='dooo' />
+                    <Link href='/home' passHref>
+                        <Image src='/Logo.png' className='object-contain' height='26px' width='26px' alt='dooo' />
+                    </Link>
                 </div>
             </div >
 
             {/* Header settings page */}
-            <div className='flex gap-4 justify-center items-center my-8 relative'>
+            <div className='flex gap-4 justify-center items-center my-8'>
                 <div className='flex flex-col justify-center'>
                     <h1 className='text-xl leading-9 m-auto text-[#1E1E1F] font-[800]'>Universal Player</h1>
                     <p className='text-[#1E1E1F] text-xs sm:text-sm md:text-md mx-8'>Paste this script in your website’s header

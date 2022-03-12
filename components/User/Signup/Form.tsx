@@ -3,6 +3,7 @@ import Input from "./Input"
 import { BsArrowRight, BsApple, BsGoogle } from 'react-icons/bs'
 import { FaFacebookF } from 'react-icons/fa'
 import Link from "next/link"
+import Image from "next/image"
 
 const Form = () => {
 

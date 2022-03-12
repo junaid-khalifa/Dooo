@@ -15,9 +15,9 @@ const index = () => {
                 <h1 className="text-[#1E1E1F] font-bold leading-10">Order Summary</h1>
             </div>
             {/* checkout form */}
-            <div className='mx-[250px]'>
-                <div className='flex justify-between mt-4'>
-                    <div>
+            <div className='mx-4 sm:mx-32 lg:mx-[250px]'>
+                <div className='flex flex-col lg:flex-row justify-between mt-4'>
+                    <div className='flex justify-center'>
                         <Image
                             src='/gold-plan.png'
                             alt='gold plan'
@@ -49,23 +49,23 @@ const index = () => {
                             CHOOSE METHOD
                         </h1>
                     </div>
-                    <div className='flex flex-row gap-2 mt-4'>
+                    <div className='flex flex-col lg:flex-row gap-2 mt-4'>
 
-                        <div className='border-[#462291] border-2 h-30 flex gap-4 p-3'>
+                        <div className='border-[#462291] border-2 flex gap-4 p-3'>
                             <input type="radio" className='outline-2 h-6 w-6 text-[#787C87]' />
                             <div>
                                 <h1 className='font-bold'>Credit Card</h1>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                             </div>
                         </div>
-                        <div className='border-[#C5C7CD] border-2 h-30 flex gap-4 p-3'>
+                        <div className='border-[#C5C7CD] border-2 flex gap-4 p-3'>
                             <input type="radio" className='outline-2 h-6 w-6 text-[#787C87]' />
                             <div>
                                 <h1 className='font-bold'>PayPal</h1>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                             </div>
                         </div>
-                        <div className='border-[#C5C7CD] border-2 h-30 flex gap-4 p-3'>
+                        <div className='border-[#C5C7CD] border-2 flex gap-4 p-3'>
                             <input type="radio" className='outline-2 h-6 w-6 text-[#787C87]' />
                             <div>
                                 <h1 className='font-bold'>Checkout</h1>
@@ -77,20 +77,20 @@ const index = () => {
                     <div className='my-8'>
 
                         <div className='grid grid-cols-3 gap-4 mb-6'>
-                            <div className='col-span-2'>
+                            <div className='col-span-3 lg:col-span-2'>
                                 <h1 className='text-[#787C87] text-sm'>CARD NUMBER</h1>
                                 <input type="text" className='outline-1 h-10 px-2 items-center w-full rounded-md border border-[#C5C7CD]' placeholder='.... .... .... ....' />
                             </div>
-                            <div className='col-span-1'>
-                                <h1 className='text-[#787C87] text-sm'>EXPIRY DATE</h1>
-                                <input type="text" className='outline-1 h-10 px-2 items-center w-full rounded-md border border-[#C5C7CD]' placeholder='MM/YY' />
+                            <div className='col-span-3 lg:col-span-2'>
+                                <h1 className='text-[#787C87] text-sm'>NAME ON CARD</h1>
+                                <input type="text" className='outline-1 h-10 px-2 items-center w-full rounded-md border border-[#C5C7CD]' placeholder='' />
                             </div>
                         </div>
 
                         <div className='grid grid-cols-3 gap-4'>
                             <div className='col-span-2'>
-                                <h1 className='text-[#787C87] text-sm'>NAME ON CARD</h1>
-                                <input type="text" className='outline-1 h-10 px-2 items-center w-full rounded-md border border-[#C5C7CD]' placeholder='' />
+                                <h1 className='text-[#787C87] text-sm'>EXPIRY DATE</h1>
+                                <input type="text" className='outline-1 h-10 px-2 items-center w-full rounded-md border border-[#C5C7CD]' placeholder='MM/YY' />
                             </div>
                             <div className='col-span-1'>
                                 <h1 className='text-[#787C87] text-sm'>CODE</h1>

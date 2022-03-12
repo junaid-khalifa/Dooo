@@ -6,22 +6,33 @@ import TableData from './TableData'
 import EmbedButton from './Inputs/EmbedButton'
 import { useRouter } from 'next/router'
 import Image from 'next/image'
+import { useState } from 'react'
+import SideNav from '../SideNav'
 
 const VideosList = () => {
     const router = useRouter()
+    const [nav, setNav] = useState(false)
+
+    function showSideNav() {
+        setNav(!nav)
+    }
+
+    const styleValue = nav ? 'none' : 'hidden'
 
     return (
         <div className='relative'>
-
+            <SideNav stylevalue={styleValue} />
 
             <div className="rounded-t mb-0 px-4 py-3 border-0 relative">
                 {/* Nav */}
                 <div className='flex flex-row items-center gap-1 float-left absolute top-4 left-4 sm:hidden'>
-                    <div className='flex sm:hidden'>
+                    <div onClick={showSideNav} className='flex sm:hidden'>
                         <Image src='/home-bar.png' alt='bars' height='16px' width='21px' />
                     </div>
                     <div className='flex sm:hidden'>
-                        <Image src='/Logo.png' className='object-contain' height='26px' width='26px' alt='dooo' />
+                        <Link href='/home' passHref>
+                            <Image src='/Logo.png' className='object-contain' height='26px' width='26px' alt='dooo' />
+                        </Link>
                     </div>
                 </div >
 

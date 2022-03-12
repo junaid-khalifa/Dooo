@@ -6,27 +6,37 @@ import { GoGraph } from 'react-icons/go'
 import { useRouter } from 'next/router'
 import Modal from './Modal'
 import Link from 'next/link'
+import SideNav from '../SideNav'
 
 const Navigation = () => {
     const router = useRouter();
     const [hide, setHide] = useState(true)
+    const [nav, setNav] = useState(false)
+
+    function showSideNav() {
+        setNav(!nav)
+    }
 
     function modalHandler() {
         setHide(!hide)
     }
+
     const modalStyle = hide ? 'hidden' : 'none'
+    const styleValue = nav ? 'none' : 'hidden'
 
     return (
         <div className='overflow-hidden mx-auto md:mx-8 sm:mx-2 w-11/12'>
             <nav className='flex my-4 justify-between'>
                 <div className='flex flex-row items-center gap-1 float-left'>
-                    <div className='flex sm:hidden'>
+                    <div onClick={showSideNav} className='flex sm:hidden cursor-pointer'>
                         <Image src='/home-bar.png' alt='bars' height='16px' width='21px' />
                     </div>
-                    <div className='flex sm:hidden'>
-                        <Image src='/Logo.png' className='object-contain' height='26px' width='26px' alt='dooo' />
+                    <div className='flex sm:hidden cursor-pointer'>
+                        <Link href='/home' passHref>
+                            <Image src='/Logo.png' className='object-contain' height='26px' width='26px' alt='dooo' />
+                        </Link>
                     </div>
-
+                    <SideNav stylevalue={styleValue} />
                 </div >
                 <div className='flex justify-end'>
                     {router.pathname === '/home' && (

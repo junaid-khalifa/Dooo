@@ -17,22 +17,37 @@ import Addchapter from "./Addchapter"
 import AddCallToAction from "./AddCallToAction"
 import PlayerTheme from "../Player/PlayerTheme"
 import Toggle from "../Toggle"
+import Link from 'next/link'
+import { useState } from "react"
+import SideNav from "../SideNav"
 
 const Video = () => {
+    const [nav, setNav] = useState(false)
+
+    function showSideNav() {
+        setNav(!nav)
+    }
+
+    const styleValue = nav ? 'none' : 'hidden'
+
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
         //...
     }
 
     return (
         <div className="mt-16">
+            <SideNav stylevalue={styleValue} />
             {/* Nav */}
             <div className='flex flex-row items-center gap-1 float-left absolute top-5 left-0 sm:hidden mx-8'>
-                <div className='flex sm:hidden'>
+                <div className='flex sm:hidden' onClick={showSideNav}>
                     <Image src='/home-bar.png' alt='bars' height='16px' width='21px' />
                 </div>
                 <div className='flex sm:hidden'>
-                    <Image src='/Logo.png' className='object-contain' height='26px' width='26px' alt='dooo' />
+                    <Link href='/home' passHref>
+                        <Image src='/Logo.png' className='object-contain' height='26px' width='26px' alt='dooo' />
+                    </Link>
                 </div>
+
             </div >
 
             {/* Header --> Loader and camcel button */}

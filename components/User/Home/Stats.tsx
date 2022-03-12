@@ -4,29 +4,28 @@ import Date from './Date'
 
 const Stats = () => {
     return (
-        <div className='w-[95vw] float-right'>
-            <div className='grid grid-cols-2 md:grid-cols-4 border-2 bg-[#373A49] mx-6 my-6'>
-                <div className='flex justify-center bg-[#373A49] items-center text-white font-bold h-[120px]'>
+        <div className='overflow-hidden'>
+            <div className='grid grid-cols-2 md:grid-cols-4 border-2 bg-[#373A49] mx-2 md:mx-6 my-6 -mr-5 -ml-5'>
+
+                <div className='flex justify-center bg-[#373A49] text-xs sm:text-lg items-center text-white font-bold h-[120px]'>
                     <GoGraph size={22} className='mx-2' /> {"  "} Check stats
                 </div>
-                <div className='flex justify-center bg-white col-span-1 -skew-x-[16deg] border-white h-[120px]'>
+                <div className='flex justify-center bg-white col-span-1 -skew-x-[16deg] ml-4 md:ml-0 border-white h-[120px]'>
                     <div className="m-auto skew-x-[18deg]">
-                        <h1>Current Plan</h1>
-                        <h1 className="text-[#1E1E1F] font-bold">Gold Member</h1>
+                        <h1 className="text-xs sm:text-lg">Current Plan</h1>
+                        <h1 className="text-[#1E1E1F] font-bold text-xs sm:text-lg">Gold Member</h1>
                     </div>
                 </div>
-                <div className='flex justify-center bg-white col-span-1 -skew-x-[16deg] md:-ml-1 h-[120px] overflow-hidden'>
+                <div className='flex justify-center bg-white col-span-1 -skew-x-[16deg] mr-4 md:mr-0 md:-ml-1 h-[120px] overflow-hidden'>
                     <div className="m-auto skew-x-[18deg]">
-                        <h1>Payment Type</h1>
-                        <h1 className="text-[#1E1E1F] font-bold">Onetime</h1>
-                        <h1>PayPal <a className="underline">change</a></h1>
+                        <h1 className="text-xs sm:text-lg">Payment Type</h1>
+                        <h1 className="text-[#1E1E1F] font-bold text-xs sm:text-lg">Onetime</h1>
+                        <h1 className="text-xs sm:text-lg">PayPal <a className="underline text-xs sm:text-lg text-sky-700">change</a></h1>
                     </div>
                 </div>
-                <div className='flex justify-center items-center bg-[#373A49] h-[120px]'>
-                    <div className='flex px-2 h-10'>
-                        <h1 className='leading-6 mx-auto text-[20px] bg-white'>[xxx]</h1>
-                        <p className="mx-2 text-white font-bold">Redeem Codes</p>
-                    </div>
+                <div className='flex flex-col justify-center items-center bg-[#373A49] h-[120px]'>
+                    <h1 className='leading-6 text-xs sm:text-lg text-[20px] bg-white'>[xxx]</h1>
+                    <p className="mx-2 text-xs sm:text-lg text-white font-bold">Redeem Codes</p>
                 </div>
             </div>
             <Date />
