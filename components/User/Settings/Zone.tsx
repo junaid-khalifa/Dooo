@@ -1,7 +1,7 @@
 import React from 'react'
 import { BsCheckCircleFill } from 'react-icons/bs'
 import { MdCancel } from 'react-icons/md'
-import { ZonesProps } from '../../types'
+import { ZonesProps } from '../../../types'
 
 const Zone = (props: ZonesProps) => {
     return (

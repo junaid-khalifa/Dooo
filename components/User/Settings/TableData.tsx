@@ -5,7 +5,7 @@ import { BsFillArrowDownSquareFill, BsRecordCircle } from 'react-icons/bs'
 import { MdEdit } from 'react-icons/md'
 import { RiCodeBoxLine, RiDeleteBin6Line } from 'react-icons/ri'
 import { GiWorld } from 'react-icons/gi'
-import { TableProps } from '../../types'
+import { TableProps } from '../../../types'
 import Dropdown from '../Dropdown/Dropdown'
 
 const TableData = () => {
